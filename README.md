@@ -40,3 +40,5 @@ If the properties are not loaded the code will throw a PropertiesNotFoundExcepti
 but you are not forced to handle this if you do not want to, as I wouldn't
 want my library to cause you to litter your code with try catch blocks unless
 you actually want to write them.
+
+
