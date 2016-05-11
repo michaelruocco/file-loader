@@ -1,5 +1,9 @@
 # Property Loader
 
+[![Build Status](https://travis-ci.org/michaelruocco/property-loader.svg?branch=master)](https://travis-ci.org/michaelruocco/property-loader)
+[![Coverage Status](https://coveralls.io/repos/github/michaelruocco/property-loader/badge.svg?branch=master)](https://coveralls.io/github/michaelruocco/property-loader?branch=master)
+[![Dependency Status](https://www.versioneye.com/user/projects/5733571fa0ca350050841000/badge.svg?style=flat)](https://www.versioneye.com/user/projects/5733571fa0ca350050841000)
+
 This is a simple java library to enable loading of properties from files
 either on the filesystem or from the classpath in fewer lines of code.
 
