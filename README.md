@@ -4,6 +4,7 @@
 [![Coverage Status](https://coveralls.io/repos/github/michaelruocco/property-loader/badge.svg?branch=master)](https://coveralls.io/github/michaelruocco/property-loader?branch=master)
 [![Dependency Status](https://www.versioneye.com/user/projects/5733571fa0ca350050841000/badge.svg?style=flat)](https://www.versioneye.com/user/projects/5733571fa0ca350050841000)
 [![Maven Central](https://maven-badges.herokuapp.com/maven-central/com.github.michaelruocco/property-loader/badge.svg)](https://maven-badges.herokuapp.com/maven-central/com.github.michaelruocco/property-loader)
+[![Codacy Badge](https://api.codacy.com/project/badge/Grade/f2ee600bb48147589686ee5a78104275)](https://www.codacy.com/app/michael-ruocco/property-loader?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=michaelruocco/property-loader&amp;utm_campaign=Badge_Grade)
 
 This is a simple java library to enable loading of properties from files
 either on the filesystem or from the classpath in fewer lines of code.
@@ -45,3 +46,11 @@ If the properties are not loaded the code will throw a PropertiesNotFoundExcepti
 but you are not forced to handle this if you do not want to, as I wouldn't
 want my library to cause you to litter your code with try catch blocks unless
 you actually want to write them.
+
+## Running the Tests
+
+You can run the unit tests for this project by running:
+
+```
+gradlew clean build
+```
