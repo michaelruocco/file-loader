@@ -30,7 +30,7 @@ the file system by doing the following:
 
 ```
 String path = "folder/file-system.properties";
-PropertyLoader propertyLoader = new PropertyLoader();
+PropertyLoader propertyLoader = new FileSystemPropertyLoader();
 Properties properties = propertyLoader.load(path);
 ```
 
@@ -38,8 +38,8 @@ Alternatively you can load a property file from the classpath by doing:
 
 ```
 String path = "/package/classpath.properties";
-PropertyLoader propertyLoader = new PropertyLoader();
-Properties properties = propertyLoader.loadFromClasspath(path);
+PropertyLoader propertyLoader = new ClasspathPropertyLoader();
+Properties properties = propertyLoader.load(path);
 ```
 
 If the properties are not loaded the code will throw a PropertiesNotFoundException
