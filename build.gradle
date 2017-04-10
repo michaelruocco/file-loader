@@ -76,7 +76,7 @@ uploadArchives {
                 description 'Code library to easily load properties from the classpath or file system file'
                 groupId 'com.github.michaelruocco'
                 artifactId 'property-loader'
-                version '2.0.0'
+                version '2.0.1'
                 url 'https://github.com/michaelruocco/property-loader'
 
                 developers {
