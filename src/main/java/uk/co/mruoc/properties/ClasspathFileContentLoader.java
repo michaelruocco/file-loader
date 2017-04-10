@@ -2,18 +2,17 @@ package uk.co.mruoc.properties;
 
 import java.io.IOException;
 import java.io.InputStream;
-import java.util.Properties;
 
-public class ClasspathPropertyLoader implements PropertyLoader {
+public class ClasspathFileContentLoader implements FileContentLoader {
 
     private InputStreamConverter converter = new InputStreamConverter();
 
     @Override
-    public Properties load(String path) {
+    public String loadContent(String path) {
         try (InputStream stream = getClass().getResourceAsStream(path)) {
-            return converter.toProperties(stream);
+            return converter.toString(stream);
         } catch (IOException | NullPointerException e) {
-            throw new PropertiesNotFoundException(path, e);
+            throw new FileContentLoadException(path, e);
         }
     }
 

@@ -4,18 +4,17 @@ import java.io.File;
 import java.io.FileInputStream;
 import java.io.IOException;
 import java.io.InputStream;
-import java.util.Properties;
 
-public class FileSystemPropertyLoader implements PropertyLoader {
+public class FileSystemFileContentLoader implements FileContentLoader {
 
     private InputStreamConverter converter = new InputStreamConverter();
 
     @Override
-    public Properties load(String path) {
+    public String loadContent(String path) {
         try (InputStream stream = new FileInputStream(new File(path))) {
-            return converter.toProperties(stream);
+            return converter.toString(stream);
         } catch (IOException | NullPointerException e) {
-            throw new PropertiesNotFoundException(path, e);
+            throw new FileContentLoadException(path, e);
         }
     }
 
