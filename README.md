@@ -2,7 +2,6 @@
 
 [![Build Status](https://travis-ci.org/michaelruocco/property-loader.svg?branch=master)](https://travis-ci.org/michaelruocco/property-loader)
 [![Coverage Status](https://coveralls.io/repos/github/michaelruocco/property-loader/badge.svg?branch=master)](https://coveralls.io/github/michaelruocco/property-loader?branch=master)
-[![Dependency Status](https://www.versioneye.com/user/projects/5733571fa0ca350050841000/badge.svg?style=flat)](https://www.versioneye.com/user/projects/5733571fa0ca350050841000)
 [![Maven Central](https://maven-badges.herokuapp.com/maven-central/com.github.michaelruocco/property-loader/badge.svg)](https://maven-badges.herokuapp.com/maven-central/com.github.michaelruocco/property-loader)
 [![Codacy Badge](https://api.codacy.com/project/badge/Grade/f2ee600bb48147589686ee5a78104275)](https://www.codacy.com/app/michael-ruocco/property-loader?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=michaelruocco/property-loader&amp;utm_campaign=Badge_Grade)
 
@@ -54,3 +53,15 @@ You can run the unit tests for this project by running:
 ```
 gradlew clean build
 ```
+
+## Checking dependencies
+
+You can check the current dependencies used by the project to see whether
+or not they are currently up to date by running the following command:
+
+```
+gradlew dependencyUpdates
+```
+
+The project is currently using assertj version 2.5.0 to retain backwards compatibility
+with java 7.
