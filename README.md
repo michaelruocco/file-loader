@@ -46,6 +46,51 @@ but you are not forced to handle this if you do not want to, as I wouldn't
 want my library to cause you to litter your code with try catch blocks unless
 you actually want to write them.
 
+### Loading File Content
+
+You can also use the library to load file content as well as properties, again this
+can be done either from the local file system or the classpath in the same way as
+described for properties above
+
+To load from the file system you would do:
+
+```
+String path = "folder/file-system.txt";
+FileContentLoader loader = new FileSystemFileContentLoader();
+Properties properties = loader.loadContent(path);
+```
+
+To load from the classpath you would do:
+
+```
+String path = "/package/classpath.txt";
+FileContentLoader loader = new ClasspathFileContentLoader();
+Properties properties = loader.loadContent(path);
+```
+
+### Loading File Content Base64 Encoded
+
+It is also possible to load file content and have it automatically
+encoded into Base64 format, there are alternative implementations of 
+FileContentLoader that you can use to do this, again it can be done
+from either the classpath or the file system.
+
+To load from the file system you would do:
+
+```
+String path = "folder/file-system.txt";
+FileContentLoader loader = new FileSystemBase64FileContentLoader();
+Properties properties = loader.loadContent(path);
+```
+
+To load from the classpath you would do:
+
+```
+String path = "/package/classpath.txt";
+FileContentLoader loader = new ClasspathBase64FileContentLoader();
+Properties properties = loader.loadContent(path);
+```
+
 ## Running the Tests
 
 You can run the unit tests for this project by running:
