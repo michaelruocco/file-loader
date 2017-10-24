@@ -4,19 +4,17 @@ import org.junit.Test;
 
 import static org.assertj.core.api.Assertions.assertThat;
 
-public class ClasspathFileContentLoaderTest {
+public class ClasspathBase64FileContentLoaderTest {
 
-    private static final String NEW_LINE = System.lineSeparator();
-    private final FileContentLoader loader = new ClasspathFileContentLoader();
+    private final FileContentLoader loader = new ClasspathBase64FileContentLoader();
 
     @Test
     public void shouldReturnFileContent() {
-        String expectedContent = "firstName=MICHAEL" + NEW_LINE + "surname=RUOCCO";
+        String expectedContent = "Zmlyc3ROYW1lPU1JQ0hBRUwKc3VybmFtZT1SVU9DQ08=";
         String path = "/test/classpath.properties";
 
         String content = loader.loadContent(path);
 
-        System.out.println(content);
         assertThat(content).isEqualTo(expectedContent);
     }
 
