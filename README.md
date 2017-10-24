@@ -15,7 +15,7 @@ gradle you would do this by adding the following to your build.gradle file:
 
 ```
 dependencies {
-    compile 'com.github.michaelruocco:property-loader:2.0.1'
+    compile 'com.github.michaelruocco:property-loader:3.0.0'
 }
 ```
 
@@ -62,6 +62,3 @@ or not they are currently up to date by running the following command:
 ```
 gradlew dependencyUpdates
 ```
-
-The project is currently using assertj version 2.5.0 to retain backwards compatibility
-with java 7.
