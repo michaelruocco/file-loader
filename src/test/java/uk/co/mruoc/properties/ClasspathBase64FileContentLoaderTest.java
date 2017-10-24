@@ -20,7 +20,7 @@ public class ClasspathBase64FileContentLoaderTest {
 
     @Test(expected = FileContentLoadException.class)
     public void shouldErrorIfFileDoesNotExist() {
-        String path = "/invalid/file-system.properties";
+        String path = "/invalid/classpath.properties";
 
         loader.loadContent(path);
     }
