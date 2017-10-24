@@ -2,3 +2,4 @@
 .idea
 build
 my-gradle.properties
+*.iml
