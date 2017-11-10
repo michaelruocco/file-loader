@@ -15,7 +15,7 @@ gradle you would do this by adding the following to your build.gradle file:
 
 ```
 dependencies {
-    compile 'com.github.michaelruocco:property-loader:3.0.0'
+    compile 'com.github.michaelruocco:property-loader:3.0.1'
 }
 ```
 

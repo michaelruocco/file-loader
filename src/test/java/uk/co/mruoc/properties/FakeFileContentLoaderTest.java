@@ -38,5 +38,5 @@ public class FakeFileContentLoaderTest {
 
         assertThat(result).isEqualTo(content);
     }
-    
+
 }
