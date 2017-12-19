@@ -50,14 +50,10 @@ artifacts {
     archives javadocJar
 }
 
-gradle.taskGraph.whenReady { taskGraph ->
-    if (taskGraph.hasTask(uploadArchives)) {
-        signing {
-            required true
-            sign configurations.archives
-        }
-    }
+signing {
+    sign configurations.archives
 }
+signArchives.enabled = gradle.startParameter.taskNames.contains("uploadArchives")
 
 uploadArchives {
     repositories {
