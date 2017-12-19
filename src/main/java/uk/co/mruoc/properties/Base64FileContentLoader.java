@@ -1,6 +1,11 @@
 package uk.co.mruoc.properties;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+
 public class Base64FileContentLoader implements FileContentLoader {
+
+    private static final Logger LOGGER = LoggerFactory.getLogger(Base64FileContentLoader.class);
 
     private final Base64Encoder base64Encoder = new Base64Encoder();
     private final FileContentLoader contentLoader;
@@ -12,7 +17,9 @@ public class Base64FileContentLoader implements FileContentLoader {
     @Override
     public String loadContent(String path) {
         String content = contentLoader.loadContent(path);
-        return base64Encoder.encode(content);
+        String base64 = base64Encoder.encode(content);
+        LOGGER.info("converted content " + content + " into base64 " + base64);
+        return base64;
     }
 
 }
