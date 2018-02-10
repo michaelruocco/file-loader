@@ -39,9 +39,7 @@ Properties properties = propertyLoader.load(path);
 ```
 
 If the properties are not loaded the code will throw a PropertiesNotFoundException
-but you are not forced to handle this if you do not want to, as I wouldn't
-want my library to cause you to litter your code with try catch blocks unless
-you actually want to write them.
+but you are not forced to handle this if you do not want to.
 
 ### Loading File Content
 
@@ -64,6 +62,9 @@ String path = "/package/classpath.txt";
 FileContentLoader loader = new ClasspathFileContentLoader();
 Properties properties = loader.loadContent(path);
 ```
+
+If the file content is not loaded the code will throw a FileContentLoadException
+but you are not forced to handle this if you do not want to.
 
 ### Loading File Content Base64 Encoded
 
@@ -88,7 +89,10 @@ FileContentLoader loader = new ClasspathBase64FileContentLoader();
 Properties properties = loader.loadContent(path);
 ```
 
-### Loading Streams
+If the file content is not loaded the code will throw a FileContentLoadException
+but you are not forced to handle this if you do not want to.
+
+### Loading Input Streams
 
 It is also possible to load and input stream as well as file content
 as a string. Again this can be done from either the classpath or
@@ -111,6 +115,9 @@ InputStreamLoader loader = new ClasspathInputStreamLoader();
 InputStream inputStream = loader.load(path);
 // don't forget to close the stream when you're done with it!
 ```
+
+If the file content is not loaded the code will throw a UncheckedIOException
+but you are not forced to handle this if you do not want to.
 
 ### Fakes
 
