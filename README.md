@@ -1,9 +1,9 @@
 # File Loader
 
-[![Build Status](https://travis-ci.org/michaelruocco/property-loader.svg?branch=master)](https://travis-ci.org/michaelruocco/property-loader)
-[![Coverage Status](https://coveralls.io/repos/github/michaelruocco/property-loader/badge.svg?branch=master)](https://coveralls.io/github/michaelruocco/property-loader?branch=master)
-[![Maven Central](https://maven-badges.herokuapp.com/maven-central/com.github.michaelruocco/property-loader/badge.svg)](https://maven-badges.herokuapp.com/maven-central/com.github.michaelruocco/property-loader)
-[![Codacy Badge](https://api.codacy.com/project/badge/Grade/f2ee600bb48147589686ee5a78104275)](https://www.codacy.com/app/michael-ruocco/property-loader?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=michaelruocco/property-loader&amp;utm_campaign=Badge_Grade)
+[![Build Status](https://travis-ci.org/michaelruocco/file-loader.svg?branch=master)](https://travis-ci.org/michaelruocco/file-loader)
+[![Coverage Status](https://coveralls.io/repos/github/michaelruocco/file-loader/badge.svg?branch=master)](https://coveralls.io/github/michaelruocco/file-loader?branch=master)
+[![Maven Central](https://maven-badges.herokuapp.com/maven-central/com.github.michaelruocco/file-loader/badge.svg)](https://maven-badges.herokuapp.com/maven-central/com.github.michaelruocco/file-loader)
+[![Codacy Badge](https://api.codacy.com/project/badge/Grade/f2ee600bb48147589686ee5a78104275)](https://www.codacy.com/app/michael-ruocco/file-loader?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=michaelruocco/file-loader&amp;utm_campaign=Badge_Grade)
 
 This is a simple java library to enable loading of properties from files
 either on the filesystem or from the classpath in fewer lines of code.
