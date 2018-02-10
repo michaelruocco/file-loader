@@ -3,8 +3,6 @@ package uk.co.mruoc.properties;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
-import java.io.IOException;
-import java.io.InputStream;
 import java.util.Properties;
 
 public class ClasspathPropertyLoader extends DefaultPropertyLoader {
@@ -12,7 +10,7 @@ public class ClasspathPropertyLoader extends DefaultPropertyLoader {
     private static final Logger LOGGER = LoggerFactory.getLogger(ClasspathPropertyLoader.class);
 
     public ClasspathPropertyLoader() {
-        super(new ClasspathStreamLoader());
+        super(new ClasspathInputStreamLoader());
     }
 
     @Override

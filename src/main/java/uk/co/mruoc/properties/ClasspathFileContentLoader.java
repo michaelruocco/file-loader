@@ -8,7 +8,7 @@ public class ClasspathFileContentLoader extends DefaultFileContentLoader {
     private static final Logger LOGGER = LoggerFactory.getLogger(ClasspathFileContentLoader.class);
 
     public ClasspathFileContentLoader() {
-        super(new ClasspathStreamLoader());
+        super(new ClasspathInputStreamLoader());
     }
 
     @Override

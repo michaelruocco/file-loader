@@ -8,15 +8,15 @@ import java.util.Properties;
 public class DefaultPropertyLoader implements PropertyLoader {
 
     private final InputStreamConverter converter = new InputStreamConverter();
-    private final StreamLoader streamLoader;
+    private final InputStreamLoader inputStreamLoader;
 
-    public DefaultPropertyLoader(StreamLoader streamLoader) {
-        this.streamLoader = streamLoader;
+    public DefaultPropertyLoader(InputStreamLoader inputStreamLoader) {
+        this.inputStreamLoader = inputStreamLoader;
     }
 
     @Override
     public Properties load(String path) {
-        try (InputStream stream = streamLoader.load(path)) {
+        try (InputStream stream = inputStreamLoader.load(path)) {
             return converter.toProperties(stream);
         } catch (IOException | UncheckedIOException e) {
             throw new PropertiesNotFoundException(path, e);

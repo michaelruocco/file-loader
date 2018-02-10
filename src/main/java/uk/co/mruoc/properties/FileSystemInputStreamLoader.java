@@ -5,9 +5,9 @@ import org.slf4j.LoggerFactory;
 
 import java.io.*;
 
-public class FileSystemStreamLoader implements StreamLoader {
+public class FileSystemInputStreamLoader implements InputStreamLoader {
 
-    private static final Logger LOGGER = LoggerFactory.getLogger(FileSystemStreamLoader.class);
+    private static final Logger LOGGER = LoggerFactory.getLogger(FileSystemInputStreamLoader.class);
 
     @Override
     public InputStream load(String path) {

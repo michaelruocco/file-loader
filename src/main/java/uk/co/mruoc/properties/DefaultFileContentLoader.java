@@ -7,10 +7,10 @@ import java.io.UncheckedIOException;
 public class DefaultFileContentLoader implements FileContentLoader {
 
     private final InputStreamConverter converter = new InputStreamConverter();
-    private final StreamLoader streamLoader;
+    private final InputStreamLoader inputStreamLoader;
 
-    public DefaultFileContentLoader(StreamLoader streamLoader) {
-        this.streamLoader = streamLoader;
+    public DefaultFileContentLoader(InputStreamLoader inputStreamLoader) {
+        this.inputStreamLoader = inputStreamLoader;
     }
 
     @Override
@@ -23,7 +23,7 @@ public class DefaultFileContentLoader implements FileContentLoader {
     }
 
     private InputStream toStream(String path) {
-        return streamLoader.load(path);
+        return inputStreamLoader.load(path);
     }
 
 }

@@ -24,7 +24,7 @@ public class FakeFileContentLoaderTest {
 
     @Test
     public void shouldReturnNullContentIfNotSet() {
-        String result = loader.loadContent("");
+        String result = loader.loadContent("/my/path");
 
         assertThat(result).isNull();
     }
@@ -34,7 +34,7 @@ public class FakeFileContentLoaderTest {
         String content = "my-content";
         loader.setContent(content);
 
-        String result = loader.loadContent("");
+        String result = loader.loadContent("/my/path");
 
         assertThat(result).isEqualTo(content);
     }

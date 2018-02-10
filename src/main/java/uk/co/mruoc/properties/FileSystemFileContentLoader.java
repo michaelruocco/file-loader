@@ -8,7 +8,7 @@ public class FileSystemFileContentLoader extends DefaultFileContentLoader {
     private static final Logger LOGGER = LoggerFactory.getLogger(FileSystemFileContentLoader.class);
 
     public FileSystemFileContentLoader() {
-        super(new FileSystemStreamLoader());
+        super(new FileSystemInputStreamLoader());
     }
 
     @Override

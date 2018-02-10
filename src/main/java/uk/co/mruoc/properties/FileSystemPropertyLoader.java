@@ -10,7 +10,7 @@ public class FileSystemPropertyLoader extends DefaultPropertyLoader {
     private static final Logger LOGGER = LoggerFactory.getLogger(FileSystemPropertyLoader.class);
 
     public FileSystemPropertyLoader() {
-        super(new FileSystemStreamLoader());
+        super(new FileSystemInputStreamLoader());
     }
 
     @Override

@@ -7,9 +7,9 @@ import java.io.IOException;
 import java.io.InputStream;
 import java.io.UncheckedIOException;
 
-public class ClasspathStreamLoader implements StreamLoader {
+public class ClasspathInputStreamLoader implements InputStreamLoader {
 
-    private static final Logger LOGGER = LoggerFactory.getLogger(ClasspathStreamLoader.class);
+    private static final Logger LOGGER = LoggerFactory.getLogger(ClasspathInputStreamLoader.class);
 
     @Override
     public InputStream load(String path) {

@@ -2,7 +2,7 @@ package uk.co.mruoc.properties;
 
 import java.io.InputStream;
 
-public interface StreamLoader {
+public interface InputStreamLoader {
 
     InputStream load(String path);
 

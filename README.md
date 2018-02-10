@@ -91,6 +91,63 @@ FileContentLoader loader = new ClasspathBase64FileContentLoader();
 Properties properties = loader.loadContent(path);
 ```
 
+### Loading Streams
+
+It is also possible to load and input stream as well as file content
+as a string. Again this can be done from either the classpath or
+the file system.
+
+To load an input stream from the file system you would do:
+
+```
+String path = "folder/file-system.txt";
+InputStreamLoader loader = new FileSystemInputStreamLoader();
+InputStream inputStream = loader.load(path);
+// don't forget to close the stream when you're done with it!
+```
+
+To load an input stream from the classpath you would do:
+
+```
+String path = "folder/file-system.txt";
+InputStreamLoader loader = new ClasspathInputStreamLoader();
+InputStream inputStream = loader.load(path);
+// don't forget to close the stream when you're done with it!
+```
+
+### Fakes
+
+There are also fake implementations of both FileContentLoader
+and InputStreamLoader which you can use when unit testing classes
+that use this library. They easily allow you to control the content
+or stream that is returned, as well as allowing you to verify that
+the correct path has been used when loading.
+
+File Content Example:
+
+```
+FakeFileContentLoader loader = new FakeFileContentLoader();
+loader.setContent("my fake content"); // set the fake loader to return specified file content when load method is called
+
+ClassUnderTest classUnderTest = new ClassUnderTest(loader); // pass your fake loader to your class under test
+classUnderTest.doAction();
+
+String pathPassedToLoadMethod = loader.getLastLoadedPath();
+```
+
+Input Stream Example:
+
+```
+FakeInputStreamLoader loader = new FakeInputStreamLoader();
+InputStream mockedStream = new ByteArrayInputStream("mockedStream".getBytes());
+loader.setInputStream(mockedStream); // set the fake loader to return mocked input stream when load method is called
+
+ClassUnderTest classUnderTest = new ClassUnderTest(loader); // pass your fake loader to your class under test
+classUnderTest.doAction();
+
+String pathPassedToLoadMethod = loader.getLastLoadedPath();
+```
+
 ## Running the Tests
 
 You can run the unit tests for this project by running:
