@@ -2,8 +2,6 @@ package uk.co.mruoc.properties;
 
 import org.junit.Test;
 
-import java.util.Properties;
-
 import static org.assertj.core.api.Assertions.assertThat;
 
 public class FileSystemFileContentLoaderTest {
