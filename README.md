@@ -19,9 +19,6 @@ dependencies {
 }
 ```
 
-Alternatively the jar is available for direct download from:
-[Maven Central](http://search.maven.org/).
-
 ### Loading Properties
 
 Once you have the jar on your classpath you can load your properties from
