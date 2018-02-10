@@ -1,4 +1,4 @@
-# Property Loader
+# File Loader
 
 [![Build Status](https://travis-ci.org/michaelruocco/property-loader.svg?branch=master)](https://travis-ci.org/michaelruocco/property-loader)
 [![Coverage Status](https://coveralls.io/repos/github/michaelruocco/property-loader/badge.svg?branch=master)](https://coveralls.io/github/michaelruocco/property-loader?branch=master)
@@ -15,7 +15,7 @@ gradle you would do this by adding the following to your build.gradle file:
 
 ```
 dependencies {
-    compile 'com.github.michaelruocco:property-loader:3.0.2'
+    compile 'com.github.michaelruocco:file-loader:3.0.3'
 }
 ```
 

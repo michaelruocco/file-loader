@@ -70,12 +70,12 @@ uploadArchives {
 
             pom.project {
                 packaging 'jar'
-                name 'Property Loader'
-                description 'Code library to easily load properties from the classpath or file system file'
+                name 'File Loader'
+                description 'Code library to easily load files and properties from the classpath or file system file'
                 groupId 'com.github.michaelruocco'
-                artifactId 'property-loader'
-                version '3.0.2'
-                url 'https://github.com/michaelruocco/property-loader'
+                artifactId 'file-loader'
+                version '3.0.3'
+                url 'https://github.com/michaelruocco/file-loader'
 
                 developers {
                     developer {
@@ -86,9 +86,9 @@ uploadArchives {
                 }
 
                 scm {
-                    connection 'scm:git:git@github.com/michaelruocco/property-loader.git'
-                    developerConnection 'scm:git:git@github.com/michaelruocco/property-loader.git'
-                    url 'git@github.com/michaelruocco/property-loader.git'
+                    connection 'scm:git:git@github.com/michaelruocco/file-loader.git'
+                    developerConnection 'scm:git:git@github.com/michaelruocco/file-loader.git'
+                    url 'git@github.com/michaelruocco/file-loader.git'
                 }
 
                 licenses {
