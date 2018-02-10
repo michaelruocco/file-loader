@@ -1,0 +1,24 @@
+package uk.co.mruoc.properties;
+
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+
+import java.io.IOException;
+import java.io.InputStream;
+import java.io.UncheckedIOException;
+
+public class ClasspathStreamLoader implements StreamLoader {
+
+    private static final Logger LOGGER = LoggerFactory.getLogger(ClasspathStreamLoader.class);
+
+    @Override
+    public InputStream load(String path) {
+        LOGGER.debug("loading input stream from classpath using path " + path);
+        InputStream stream = getClass().getResourceAsStream(path);
+        if (stream == null) {
+            throw new UncheckedIOException(new IOException("file not found on classpath at " + path));
+        }
+        return stream;
+    }
+
+}

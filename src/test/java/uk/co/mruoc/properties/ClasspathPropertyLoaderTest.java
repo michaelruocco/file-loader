@@ -23,7 +23,6 @@ public class ClasspathPropertyLoaderTest {
     @Test(expected = PropertiesNotFoundException.class)
     public void shouldErrorIfFileDoesNotExist() {
         String path = "/invalid/classpath.properties";
-
         loader.load(path);
     }
 
