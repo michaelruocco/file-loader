@@ -5,7 +5,7 @@ public class ContentLoader {
     private ContentLoader() {
         // utility class with only static methods
     }
-    
+
     public static String loadContentFromFileSystem(String path) {
         final FileContentLoader loader = new FileSystemFileContentLoader();
         return loader.loadContent(path);
