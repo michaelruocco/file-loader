@@ -66,6 +66,18 @@ Properties properties = loader.loadContent(path);
 If the file content is not loaded the code will throw a FileContentLoadException
 but you are not forced to handle this if you do not want to.
 
+### Loading File Content in Unit Tests
+
+A new static ContentLoader class has been added to allow easier loading
+test data from files in unit tests if required. The class has static methods
+which can be used to load data without creating an instance of a FileContentLoader
+class, e.g:
+
+```
+String myFileSystemContent = ContentLoader.loadContentFromFileSystem("folder/file.txt");
+String myClasspathContent = ContentLoader.loadContentFromClasspath("/package/file.txt");
+```
+
 ### Loading File Content Base64 Encoded
 
 It is also possible to load file content and have it automatically
