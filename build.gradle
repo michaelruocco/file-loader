@@ -74,7 +74,7 @@ uploadArchives {
                 description 'Code library to easily load files and file from the classpath or file system file'
                 groupId 'com.github.michaelruocco'
                 artifactId 'file-loader'
-                version '3.0.3'
+                version '4.0.0'
                 url 'https://github.com/michaelruocco/file-loader'
 
                 developers {
