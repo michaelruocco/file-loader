@@ -9,7 +9,7 @@ public class FileSystemBase64FileContentLoaderTest {
     private final FileContentLoader loader = new FileSystemBase64FileContentLoader();
 
     @Test
-    public void shouldReturnFileContent() {
+    public void shouldReturnBase64EncodedFileContentFromFileSystemFile() {
         String expectedContent = "Zmlyc3ROYW1lPW1pY2hhZWwKc3VybmFtZT1ydW9jY28=";
         String path = "test/file-system.properties";
 

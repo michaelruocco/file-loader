@@ -11,7 +11,7 @@ public class FileSystemPropertyLoaderTest {
     private final PropertyLoader loader = new FileSystemPropertyLoader();
 
     @Test
-    public void shouldReturnProperties() {
+    public void shouldReturnPropertiesFromFileSystemFile() {
         String path = "test/file-system.properties";
 
         Properties properties = loader.load(path);

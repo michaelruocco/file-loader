@@ -11,7 +11,7 @@ public class ClasspathPropertyLoaderTest {
     private final PropertyLoader loader = new ClasspathPropertyLoader();
 
     @Test
-    public void shouldReturnProperties() {
+    public void shouldReturnPropertiesFromClasspathFile() {
         String path = "/test/classpath.properties";
 
         Properties properties = loader.load(path);

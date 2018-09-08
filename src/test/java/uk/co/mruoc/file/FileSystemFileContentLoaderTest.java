@@ -10,7 +10,7 @@ public class FileSystemFileContentLoaderTest {
     private final FileContentLoader loader = new FileSystemFileContentLoader();
 
     @Test
-    public void shouldReturnProperties() {
+    public void shouldReturnFileContentFromFileSystemFile() {
         String expectedContent = "firstName=michael" + NEW_LINE + "surname=ruocco";
         String path = "test/file-system.properties";
 

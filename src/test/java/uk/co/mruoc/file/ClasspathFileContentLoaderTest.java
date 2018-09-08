@@ -10,7 +10,7 @@ public class ClasspathFileContentLoaderTest {
     private final FileContentLoader loader = new ClasspathFileContentLoader();
 
     @Test
-    public void shouldReturnFileContent() {
+    public void shouldReturnFileContentFromClasspathFile() {
         String expectedContent = "firstName=MICHAEL" + NEW_LINE + "surname=RUOCCO";
         String path = "/test/classpath.properties";
 

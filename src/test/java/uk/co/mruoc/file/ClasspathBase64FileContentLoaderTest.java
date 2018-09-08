@@ -9,7 +9,7 @@ public class ClasspathBase64FileContentLoaderTest {
     private final FileContentLoader loader = new ClasspathBase64FileContentLoader();
 
     @Test
-    public void shouldReturnFileContent() {
+    public void shouldReturnBase64EncodedFileContentFromClasspathFile() {
         String expectedContent = "Zmlyc3ROYW1lPU1JQ0hBRUwKc3VybmFtZT1SVU9DQ08=";
         String path = "/test/classpath.properties";
 
