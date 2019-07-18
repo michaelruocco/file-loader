@@ -4,6 +4,7 @@
 [![Coverage Status](https://coveralls.io/repos/github/michaelruocco/file-loader/badge.svg?branch=master)](https://coveralls.io/github/michaelruocco/file-loader?branch=master)
 [![Maven Central](https://img.shields.io/maven-metadata/v/http/central.maven.org/maven2/com/github/michaelruocco/file-loader/maven-metadata.xml.svg)](http://repo1.maven.org/maven2/com/github/michaelruocco/file-loader)
 [![Codacy Badge](https://api.codacy.com/project/badge/Grade/f2ee600bb48147589686ee5a78104275)](https://www.codacy.com/app/michael-ruocco/file-loader?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=michaelruocco/file-loader&amp;utm_campaign=Badge_Grade)
+[![BCH compliance](https://bettercodehub.com/edge/badge/michaelruocco/file-loader?branch=master)](https://bettercodehub.com/)
 
 This is a simple java library to enable loading of properties from files
 either on the filesystem or from the classpath in fewer lines of code.
