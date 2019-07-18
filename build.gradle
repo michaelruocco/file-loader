@@ -1,7 +1,7 @@
 plugins {
     id 'jacoco'
-    id 'com.github.kt3k.coveralls' version '2.8.2'
-    id 'com.github.ben-manes.versions' version '0.20.0'
+    id 'com.github.kt3k.coveralls' version '2.8.4'
+    id 'com.github.ben-manes.versions' version '0.21.0'
 }
 
 apply plugin: 'java'
@@ -24,7 +24,7 @@ dependencies {
     compile 'org.slf4j:slf4j-api:1.7.25'
 
     testCompile 'junit:junit:4.12'
-    testCompile 'org.assertj:assertj-core:3.11.1'
+    testCompile 'org.assertj:assertj-core:3.12.2'
     testCompile 'org.slf4j:slf4j-log4j12:1.7.25'
 }
 
