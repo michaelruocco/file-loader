@@ -14,7 +14,7 @@ public class ClasspathInputStreamLoader implements InputStreamLoader {
     @Override
     public InputStream load(String path) {
         LOGGER.debug("loading input stream from classpath using path " + path);
-        InputStream stream = getClass().getResourceAsStream(path);
+        InputStream stream = getClass().getClassLoader().getResourceAsStream(path);
         if (stream == null) {
             throw new UncheckedIOException(new IOException("file not found on classpath at " + path));
         }

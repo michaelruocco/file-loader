@@ -33,7 +33,7 @@ Properties properties = propertyLoader.load(path);
 Alternatively you can load a property file from the classpath by doing:
 
 ```
-String path = "/package/classpath.properties";
+String path = "package/classpath.properties";
 PropertyLoader propertyLoader = new ClasspathPropertyLoader();
 Properties properties = propertyLoader.load(path);
 ```
@@ -52,15 +52,40 @@ To load from the file system you would do:
 ```
 String path = "folder/file-system.txt";
 FileContentLoader loader = new FileSystemFileContentLoader();
-Properties properties = loader.loadContent(path);
+String content = loader.loadContent(path);
 ```
 
 To load from the classpath you would do:
 
 ```
-String path = "/package/classpath.txt";
+String path = "package/classpath.txt";
 FileContentLoader loader = new ClasspathFileContentLoader();
-Properties properties = loader.loadContent(path);
+String content = loader.loadContent(path);
+```
+
+If the file content is not loaded the code will throw a FileContentLoadException
+but you are not forced to handle this if you do not want to.
+
+### Loading File Files
+
+You can also use the library to load file lines as well as properties, again this
+can be done either from the local file system or the classpath in the same way as
+described for properties above
+
+To load from the file system you would do:
+
+```
+String path = "folder/file-system.txt";
+FileLineLoader loader = new FileSystemFileLineLoader();
+Collection<String> lines = loader.loadLines(path);
+```
+
+To load from the classpath you would do:
+
+```
+String path = "package/classpath.txt";
+FileLineLoader loader = new ClasspathFileLineLoader();
+Collection<String> lines = loader.loadLines(path);
 ```
 
 If the file content is not loaded the code will throw a FileContentLoadException
@@ -75,7 +100,7 @@ class, e.g:
 
 ```
 String myFileSystemContent = ContentLoader.loadContentFromFileSystem("folder/file.txt");
-String myClasspathContent = ContentLoader.loadContentFromClasspath("/package/file.txt");
+String myClasspathContent = ContentLoader.loadContentFromClasspath("package/file.txt");
 ```
 
 ### Loading File Content Base64 Encoded
@@ -96,7 +121,7 @@ Properties properties = loader.loadContent(path);
 To load from the classpath you would do:
 
 ```
-String path = "/package/classpath.txt";
+String path = "package/classpath.txt";
 FileContentLoader loader = new ClasspathBase64FileContentLoader();
 Properties properties = loader.loadContent(path);
 ```
@@ -122,7 +147,7 @@ InputStream inputStream = loader.load(path);
 To load an input stream from the classpath you would do:
 
 ```
-String path = "folder/file-system.txt";
+String path = "package/file-system.txt";
 InputStreamLoader loader = new ClasspathInputStreamLoader();
 InputStream inputStream = loader.load(path);
 // don't forget to close the stream when you're done with it!
