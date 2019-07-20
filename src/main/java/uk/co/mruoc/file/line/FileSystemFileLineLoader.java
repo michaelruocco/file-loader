@@ -2,7 +2,7 @@ package uk.co.mruoc.file.line;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
-import uk.co.mruoc.file.FileSystemInputStreamLoader;
+import uk.co.mruoc.file.FileSystemBufferedReaderLoader;
 
 import java.util.Collection;
 
@@ -11,7 +11,7 @@ public class FileSystemFileLineLoader extends DefaultFileLineLoader {
     private static final Logger LOGGER = LoggerFactory.getLogger(FileSystemFileLineLoader.class);
 
     public FileSystemFileLineLoader() {
-        super(new FileSystemInputStreamLoader());
+        super(new FileSystemBufferedReaderLoader());
     }
 
     @Override
