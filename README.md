@@ -4,6 +4,10 @@
 [![codecov](https://codecov.io/gh/michaelruocco/file-loader/branch/master/graph/badge.svg?token=y2zkzL8VI9)](undefined)
 [![Codacy Badge](https://api.codacy.com/project/badge/Grade/f2ee600bb48147589686ee5a78104275)](https://www.codacy.com/app/michael-ruocco/file-loader?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=michaelruocco/file-loader&amp;utm_campaign=Badge_Grade)
 [![BCH compliance](https://bettercodehub.com/edge/badge/michaelruocco/file-loader?branch=master)](https://bettercodehub.com/)
+[![Quality Gate Status](https://sonarcloud.io/api/project_badges/measure?project=michaelruocco_file-loader&metric=alert_status)](https://sonarcloud.io/dashboard?id=michaelruocco_file-loader)
+[![Technical Debt](https://sonarcloud.io/api/project_badges/measure?project=michaelruocco_file-loader&metric=sqale_index)](https://sonarcloud.io/dashboard?id=michaelruocco_file-loader)
+[![Coverage](https://sonarcloud.io/api/project_badges/measure?project=michaelruocco_file-loader&metric=coverage)](https://sonarcloud.io/dashboard?id=michaelruocco_file-loader)
+[![Lines of Code](https://sonarcloud.io/api/project_badges/measure?project=michaelruocco_file-loader&metric=ncloc)](https://sonarcloud.io/dashboard?id=michaelruocco_file-loader)
 [![Maven Central](https://img.shields.io/maven-central/v/com.github.michaelruocco/file-loader.svg?label=Maven%20Central)](https://search.maven.org/search?q=g:%22com.github.michaelruocco%22%20AND%20a:%22file-loader%22)
 
 This is a simple java library to enable loading of properties from files
