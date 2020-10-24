@@ -42,7 +42,7 @@ ext {
 }
 
 dependencies {
-    implementation "commons-io:commons-io:2.6"
+    implementation "commons-io:commons-io:2.8.0"
     implementation "org.slf4j:slf4j-api:${slf4jVersion}"
 
     testImplementation "org.junit.jupiter:junit-jupiter-api:${junitVersion}"
@@ -75,7 +75,7 @@ spotless {
 }
 
 jacoco {
-    toolVersion = "0.8.5"
+    toolVersion = "0.8.6"
 }
 
 jacocoTestReport {
