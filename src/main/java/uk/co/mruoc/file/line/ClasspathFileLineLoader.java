@@ -16,7 +16,7 @@ public class ClasspathFileLineLoader extends DefaultFileLineLoader {
 
     @Override
     public Collection<String> loadLines(String path) {
-        LOGGER.info("loading file lines from classpath using path " + path);
+        LOGGER.info("loading file lines from classpath using path {}", path);
         return super.loadLines(path);
     }
 

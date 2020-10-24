@@ -14,7 +14,7 @@ public class ClasspathFileContentLoader extends DefaultFileContentLoader {
 
     @Override
     public String loadContent(String path) {
-        LOGGER.info("loading file content from classpath using path " + path);
+        LOGGER.info("loading file content from classpath using path {}", path);
         return super.loadContent(path);
     }
 
