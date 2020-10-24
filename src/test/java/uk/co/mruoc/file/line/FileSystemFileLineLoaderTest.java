@@ -1,18 +1,20 @@
 package uk.co.mruoc.file.line;
 
-import org.junit.Test;
+import org.junit.jupiter.api.Test;
 import uk.co.mruoc.file.FileLoadException;
 
+import java.io.UncheckedIOException;
 import java.util.Collection;
 
 import static org.assertj.core.api.Assertions.assertThat;
+import static org.assertj.core.api.Assertions.catchThrowable;
 
-public class FileSystemFileLineLoaderTest {
+class FileSystemFileLineLoaderTest {
 
     private final FileLineLoader loader = new FileSystemFileLineLoader();
 
     @Test
-    public void shouldReturnFileContentFromFileSystemFile() {
+    void shouldReturnFileContentFromFileSystemFile() {
         String path = "test/file-system.properties";
 
         Collection<String> lines = loader.loadLines(path);
@@ -23,11 +25,15 @@ public class FileSystemFileLineLoaderTest {
         );
     }
 
-    @Test(expected = FileLoadException.class)
-    public void shouldErrorIfFileDoesNotExist() {
+    @Test
+    void shouldErrorIfFileDoesNotExist() {
         String path = "invalid/file-system.properties";
 
-        loader.loadLines(path);
+        Throwable error = catchThrowable(() -> loader.loadLines(path));
+
+        assertThat(error).isInstanceOf(FileLoadException.class)
+                .hasMessageContaining(path)
+                .hasCauseInstanceOf(UncheckedIOException.class);
     }
 
 }

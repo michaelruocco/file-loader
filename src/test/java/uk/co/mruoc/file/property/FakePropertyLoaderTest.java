@@ -1,23 +1,22 @@
 package uk.co.mruoc.file.property;
 
-import org.junit.Test;
-import uk.co.mruoc.file.property.FakePropertyLoader;
+import org.junit.jupiter.api.Test;
 
 import java.util.Properties;
 
 import static org.assertj.core.api.Assertions.assertThat;
 
-public class FakePropertyLoaderTest {
+class FakePropertyLoaderTest {
 
     private final FakePropertyLoader loader = new FakePropertyLoader();
 
     @Test
-    public void lastLoadedPathShouldBeNullBeforeLoadPropertiesIsCalled() {
+    void lastLoadedPathShouldBeNullBeforeLoadPropertiesIsCalled() {
         assertThat(loader.getLastLoadedPath()).isNull();
     }
 
     @Test
-    public void shouldReturnLastLoadedPath() {
+    void shouldReturnLastLoadedPath() {
         String path = "/my/path";
 
         loader.load(path);
@@ -26,12 +25,12 @@ public class FakePropertyLoaderTest {
     }
 
     @Test
-    public void shouldReturnNullPropertiesIfNotSet() {
+    void shouldReturnNullPropertiesIfNotSet() {
         assertThat(loader.load("")).isNull();
     }
 
     @Test
-    public void shouldReturnProperties() {
+    void shouldReturnProperties() {
         Properties properties = new Properties();
         loader.setProperties(properties);
 

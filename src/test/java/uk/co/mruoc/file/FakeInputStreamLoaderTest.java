@@ -1,23 +1,23 @@
 package uk.co.mruoc.file;
 
-import org.junit.Test;
+import org.junit.jupiter.api.Test;
 
 import java.io.ByteArrayInputStream;
 import java.io.InputStream;
 
 import static org.assertj.core.api.Assertions.assertThat;
 
-public class FakeInputStreamLoaderTest {
+class FakeInputStreamLoaderTest {
 
     private final FakeInputStreamLoader loader = new FakeInputStreamLoader();
 
     @Test
-    public void lastLoadedPathShouldBeNullBeforeLoadIsCalled() {
+    void lastLoadedPathShouldBeNullBeforeLoadIsCalled() {
         assertThat(loader.getLastLoadedPath()).isNull();
     }
 
     @Test
-    public void shouldReturnLastLoadedPath() {
+    void shouldReturnLastLoadedPath() {
         String path = "/my/path";
 
         loader.load(path);
@@ -26,14 +26,14 @@ public class FakeInputStreamLoaderTest {
     }
 
     @Test
-    public void shouldReturnNullStreamIfNotSet() {
+    void shouldReturnNullStreamIfNotSet() {
         InputStream stream = loader.load("/my/path");
 
         assertThat(stream).isNull();
     }
 
     @Test
-    public void shouldReturnStream() {
+    void shouldReturnStream() {
         InputStream expectedStream = new ByteArrayInputStream("stubbedStream".getBytes());
         loader.setInputStream(expectedStream);
 

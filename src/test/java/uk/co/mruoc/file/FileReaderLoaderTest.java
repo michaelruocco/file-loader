@@ -1,14 +1,14 @@
 package uk.co.mruoc.file;
 
-import org.junit.Test;
+import org.junit.jupiter.api.Test;
 import java.io.BufferedReader;
 
 import static org.assertj.core.api.Assertions.assertThat;
 
-public class FileReaderLoaderTest {
+class FileReaderLoaderTest {
 
     @Test
-    public void shouldReturnFileContentFromFileSystemFile() {
+    void shouldReturnFileContentFromFileSystemFile() {
         String path = "test/file-system.properties";
 
         BufferedReader reader = FileReaderLoader.loadReaderFromFileSystem(path);
@@ -20,7 +20,7 @@ public class FileReaderLoaderTest {
     }
 
     @Test
-    public void shouldReturnFileContentFromClasspathFile() {
+    void shouldReturnFileContentFromClasspathFile() {
         String path = "test/classpath.properties";
 
         BufferedReader reader = FileReaderLoader.loadReaderFromClasspath(path);

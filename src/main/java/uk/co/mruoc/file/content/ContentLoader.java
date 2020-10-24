@@ -1,10 +1,5 @@
 package uk.co.mruoc.file.content;
 
-import uk.co.mruoc.file.content.ClasspathBase64FileContentLoader;
-import uk.co.mruoc.file.content.ClasspathFileContentLoader;
-import uk.co.mruoc.file.content.FileContentLoader;
-import uk.co.mruoc.file.content.FileSystemBase64FileContentLoader;
-import uk.co.mruoc.file.content.FileSystemFileContentLoader;
 
 public class ContentLoader {
 

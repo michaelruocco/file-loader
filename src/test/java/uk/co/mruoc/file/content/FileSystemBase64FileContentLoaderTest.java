@@ -1,16 +1,19 @@
 package uk.co.mruoc.file.content;
 
-import org.junit.Test;
+import org.junit.jupiter.api.Test;
 import uk.co.mruoc.file.FileLoadException;
 
-import static org.assertj.core.api.Assertions.assertThat;
+import java.io.UncheckedIOException;
 
-public class FileSystemBase64FileContentLoaderTest {
+import static org.assertj.core.api.Assertions.assertThat;
+import static org.assertj.core.api.Assertions.catchThrowable;
+
+class FileSystemBase64FileContentLoaderTest {
 
     private final FileContentLoader loader = new FileSystemBase64FileContentLoader();
 
     @Test
-    public void shouldReturnBase64EncodedFileContentFromFileSystemFile() {
+    void shouldReturnBase64EncodedFileContentFromFileSystemFile() {
         String expectedContent = "Zmlyc3ROYW1lPW1pY2hhZWwKc3VybmFtZT1ydW9jY28=";
         String path = "test/file-system.properties";
 
@@ -19,11 +22,15 @@ public class FileSystemBase64FileContentLoaderTest {
         assertThat(content).isEqualTo(expectedContent);
     }
 
-    @Test(expected = FileLoadException.class)
-    public void shouldErrorIfFileDoesNotExist() {
+    @Test
+    void shouldErrorIfFileDoesNotExist() {
         String path = "/invalid/file-system.properties";
 
-        loader.loadContent(path);
+        Throwable error = catchThrowable(() -> loader.loadContent(path));
+
+        assertThat(error).isInstanceOf(FileLoadException.class)
+                .hasMessageContaining(path)
+                .hasCauseInstanceOf(UncheckedIOException.class);
     }
 
 }

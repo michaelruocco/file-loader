@@ -1,6 +1,5 @@
 package uk.co.mruoc.file.content;
 
-import uk.co.mruoc.file.content.FileContentLoader;
 
 public class CannedFileContentLoader implements FileContentLoader {
 

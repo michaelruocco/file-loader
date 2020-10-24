@@ -1,15 +1,15 @@
 package uk.co.mruoc.file.line;
 
-import org.junit.Test;
+import org.junit.jupiter.api.Test;
 
 import java.util.Collection;
 
 import static org.assertj.core.api.Assertions.assertThat;
 
-public class LineLoaderTest {
+class LineLoaderTest {
 
     @Test
-    public void shouldReturnFileLinesFromFileSystemFile() {
+    void shouldReturnFileLinesFromFileSystemFile() {
         String path = "test/file-system.properties";
 
         Collection<String> lines = LineLoader.loadLinesFromFileSystem(path);
@@ -21,7 +21,7 @@ public class LineLoaderTest {
     }
 
     @Test
-    public void shouldReturnFileLinesFromClasspathFile() {
+    void shouldReturnFileLinesFromClasspathFile() {
         String path = "test/classpath.properties";
 
         Collection<String> lines = LineLoader.loadLinesFromClasspath(path);

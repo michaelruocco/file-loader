@@ -1,23 +1,23 @@
 package uk.co.mruoc.file.line;
 
-import org.junit.Test;
+import org.junit.jupiter.api.Test;
 
 import java.util.Arrays;
 import java.util.Collection;
 
 import static org.assertj.core.api.Assertions.assertThat;
 
-public class FakeFileLineLoaderTest {
+class FakeFileLineLoaderTest {
 
     private final FakeFileLineLoader loader = new FakeFileLineLoader();
 
     @Test
-    public void lastLoadedPathShouldBeNullBeforeLoadContentIsCalled() {
+    void lastLoadedPathShouldBeNullBeforeLoadContentIsCalled() {
         assertThat(loader.getLastLoadedPath()).isNull();
     }
 
     @Test
-    public void shouldReturnLastLoadedPath() {
+    void shouldReturnLastLoadedPath() {
         String path = "/my/path";
 
         loader.loadLines(path);
@@ -26,14 +26,14 @@ public class FakeFileLineLoaderTest {
     }
 
     @Test
-    public void shouldReturnNullLinesIfNotSet() {
+    void shouldReturnNullLinesIfNotSet() {
         Collection<String> result = loader.loadLines("/my/path");
 
         assertThat(result).isNull();
     }
 
     @Test
-    public void shouldReturnLines() {
+    void shouldReturnLines() {
         Collection<String> lines = Arrays.asList(
                 "my-line-1",
                 "my-line-2"
