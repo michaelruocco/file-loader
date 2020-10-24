@@ -1,6 +1,12 @@
+sudo: false
 language: java
 jdk: openjdk11
-sudo: false
+
+addons:
+  sonarcloud:
+    organization: "michaelruocco"
+    token:
+      secure: "2cIQVHCGHkmE4nArRMUPzp3rPysLHVNzpj2GAxmmEYi5HgUqkA/RsiXsPO5onYoUVNOX6375m7jKpWonJJJMqR4uiqWEUsqgsqLEX5WOFtRG1A0ZHiRm1nQyOEnB32hwbNnaVtp/qzgut7Ja99p47Rdlb48lv0zEnVS77rZpUQvOirazZbmE6GWPajVsVrYf/SRgPMDpg4IdAlMlQeZXMa5KSgJo91sfDiU+rE9Iquw7yMd+vDrvWSAcjo4iehTCcLnj49VltmeQr0jUwj5JAq4d+LhQzjHRnjWkUGoXE0oAzU5o1k+Bxlgal3skpptbDDpLaOisd/4nFiJfKSAw+k+3AxYmoLCqKJGotIA9Vlw6tDE7+JLYksccfAZsT4yB8XsM6QUsKMIj9q7aDBCc5d0PyER/nw5AlIiALXz1zCMA9LrVnp79wQsQw3xXG9f96h9mDELzZB1O1w8IJJ0aBhlMGpWWpVD4ViYtabeDR+z76KSlaFdnDC3RZ91JHkrd1+1a4EB6rdZ/oipbsyd8j24EZQt8COxQOkkBqM01vSKsmRomigQbOzmt9lFuJVITfFLoGzVOUJxcu6DQVZWFtxwIRLVfiP2wJsFs0+9BEtSj5keeD07lziZSLVI1Lxz8O+OrFGwcb78enTdBt9AdHri4tERfExMvElyLvOEYt9M="
 
 branches:
   except:
@@ -16,9 +22,8 @@ cache:
     - $HOME/.gradle/wrapper/
 
 after_success:
-  - ./gradlew jacocoTestReport
   - bash <(curl -s https://codecov.io/bash)
-  - bash <(curl -Ls https://coverage.codacy.com/get.sh) report -l Java -r build/reports/jacoco/test/jacocoTestReport.xml
+  - bash <(curl -Ls https://coverage.codacy.com/get.sh) report -l Java -r build/reports/jacoco/report.xml
 
 stages:
   - name: build
@@ -32,7 +37,7 @@ stages:
 jobs:
   include:
     - stage: build
-      script: ./gradlew currentVersion spotlessCheck build dependencyUpdates
+      script: ./gradlew clean currentVersion spotlessCheck build dependencyUpdates jacocoTestReport sonarqube
 
     - stage: snapshot
       script: ./gradlew artifactoryPublish -Dbuild.number=$TRAVIS_BUILD_NUMBER
