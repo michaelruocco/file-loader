@@ -195,19 +195,15 @@ classUnderTest.doAction();
 String pathPassedToLoadMethod = loader.getLastLoadedPath();
 ```
 
-## Running the Tests
+## Useful Commands
 
-You can run the unit tests for this project by running:
-
-```
-gradlew clean build
-```
-
-## Checking dependencies
-
-You can check the current dependencies used by the project to see whether
-or not they are currently up to date by running the following command:
-
-```
-gradlew dependencyUpdates
+```gradle
+// cleans build directories
+// prints currentVersion
+// formats code
+// builds code
+// runs tests
+// checks for gradle issues
+// checks dependency versions
+./gradlew clean currentVersion spotlessApply build lintGradle dependencyUpdates
 ```
