@@ -1,14 +1,12 @@
 package uk.co.mruoc.file.property;
 
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
+import lombok.extern.slf4j.Slf4j;
 import uk.co.mruoc.file.ClasspathInputStreamLoader;
 
 import java.util.Properties;
 
+@Slf4j
 public class ClasspathPropertyLoader extends DefaultPropertyLoader {
-
-    private static final Logger LOGGER = LoggerFactory.getLogger(ClasspathPropertyLoader.class);
 
     public ClasspathPropertyLoader() {
         super(new ClasspathInputStreamLoader());
@@ -16,7 +14,7 @@ public class ClasspathPropertyLoader extends DefaultPropertyLoader {
 
     @Override
     public Properties load(String path) {
-        LOGGER.info("loading file from classpath using path {}", path);
+        log.info("loading file from classpath using path {}", path);
         return super.load(path);
     }
 

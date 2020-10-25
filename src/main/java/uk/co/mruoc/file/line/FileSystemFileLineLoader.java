@@ -1,14 +1,12 @@
 package uk.co.mruoc.file.line;
 
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
+import lombok.extern.slf4j.Slf4j;
 import uk.co.mruoc.file.FileSystemBufferedReaderLoader;
 
 import java.util.Collection;
 
+@Slf4j
 public class FileSystemFileLineLoader extends DefaultFileLineLoader {
-
-    private static final Logger LOGGER = LoggerFactory.getLogger(FileSystemFileLineLoader.class);
 
     public FileSystemFileLineLoader() {
         super(new FileSystemBufferedReaderLoader());
@@ -16,7 +14,7 @@ public class FileSystemFileLineLoader extends DefaultFileLineLoader {
 
     @Override
     public Collection<String> loadLines(String path) {
-        LOGGER.info("loading file lines from classpath using path {}", path);
+        log.info("loading file lines from classpath using path {}", path);
         return super.loadLines(path);
     }
 

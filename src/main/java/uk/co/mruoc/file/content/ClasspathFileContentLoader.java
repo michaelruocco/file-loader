@@ -1,12 +1,10 @@
 package uk.co.mruoc.file.content;
 
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
+import lombok.extern.slf4j.Slf4j;
 import uk.co.mruoc.file.ClasspathInputStreamLoader;
 
+@Slf4j
 public class ClasspathFileContentLoader extends DefaultFileContentLoader {
-
-    private static final Logger LOGGER = LoggerFactory.getLogger(ClasspathFileContentLoader.class);
 
     public ClasspathFileContentLoader() {
         super(new ClasspathInputStreamLoader());
@@ -14,7 +12,7 @@ public class ClasspathFileContentLoader extends DefaultFileContentLoader {
 
     @Override
     public String loadContent(String path) {
-        LOGGER.info("loading file content from classpath using path {}", path);
+        log.info("loading file content from classpath using path {}", path);
         return super.loadContent(path);
     }
 
