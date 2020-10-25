@@ -8,6 +8,7 @@
 [![Technical Debt](https://sonarcloud.io/api/project_badges/measure?project=michaelruocco_file-loader&metric=sqale_index)](https://sonarcloud.io/dashboard?id=michaelruocco_file-loader)
 [![Coverage](https://sonarcloud.io/api/project_badges/measure?project=michaelruocco_file-loader&metric=coverage)](https://sonarcloud.io/dashboard?id=michaelruocco_file-loader)
 [![Lines of Code](https://sonarcloud.io/api/project_badges/measure?project=michaelruocco_file-loader&metric=ncloc)](https://sonarcloud.io/dashboard?id=michaelruocco_file-loader)
+[![Download](https://api.bintray.com/packages/michaelruocco/maven/file-loader/images/download.svg?version=6.0.0) ](https://bintray.com/michaelruocco/maven/file-loader/6.0.0/link)
 [![Maven Central](https://img.shields.io/maven-central/v/com.github.michaelruocco/file-loader.svg?label=Maven%20Central)](https://search.maven.org/search?q=g:%22com.github.michaelruocco%22%20AND%20a:%22file-loader%22)
 
 This is a simple java library to enable loading of properties from files
