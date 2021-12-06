@@ -1,15 +1,15 @@
 # File Loader
 
-[![Build Status](https://travis-ci.org/michaelruocco/file-loader.svg?branch=master)](https://travis-ci.org/michaelruocco/file-loader)
-[![codecov](https://codecov.io/gh/michaelruocco/file-loader/branch/master/graph/badge.svg?token=y2zkzL8VI9)](undefined)
-[![Codacy Badge](https://api.codacy.com/project/badge/Grade/f2ee600bb48147589686ee5a78104275)](https://www.codacy.com/app/michael-ruocco/file-loader?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=michaelruocco/file-loader&amp;utm_campaign=Badge_Grade)
+[![Build](https://github.com/michaelruocco/file-loader/workflows/pipeline/badge.svg)](https://github.com/michaelruocco/file-loader/actions)
+[![codecov](https://codecov.io/gh/michaelruocco/file-loader/branch/master/graph/badge.svg?token=FWDNP534O7)](https://codecov.io/gh/michaelruocco/file-loader)
+[![Codacy Badge](https://app.codacy.com/project/badge/Grade/272889cf707b4dcb90bf451392530794)](https://www.codacy.com/gh/michaelruocco/file-loader/dashboard?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=michaelruocco/file-loader&amp;utm_campaign=Badge_Grade)
 [![BCH compliance](https://bettercodehub.com/edge/badge/michaelruocco/file-loader?branch=master)](https://bettercodehub.com/)
 [![Quality Gate Status](https://sonarcloud.io/api/project_badges/measure?project=michaelruocco_file-loader&metric=alert_status)](https://sonarcloud.io/dashboard?id=michaelruocco_file-loader)
 [![Technical Debt](https://sonarcloud.io/api/project_badges/measure?project=michaelruocco_file-loader&metric=sqale_index)](https://sonarcloud.io/dashboard?id=michaelruocco_file-loader)
 [![Coverage](https://sonarcloud.io/api/project_badges/measure?project=michaelruocco_file-loader&metric=coverage)](https://sonarcloud.io/dashboard?id=michaelruocco_file-loader)
 [![Lines of Code](https://sonarcloud.io/api/project_badges/measure?project=michaelruocco_file-loader&metric=ncloc)](https://sonarcloud.io/dashboard?id=michaelruocco_file-loader)
-[![Download](https://api.bintray.com/packages/michaelruocco/maven/file-loader/images/download.svg?version=6.0.0) ](https://bintray.com/michaelruocco/maven/file-loader/6.0.0/link)
 [![Maven Central](https://img.shields.io/maven-central/v/com.github.michaelruocco/file-loader.svg?label=Maven%20Central)](https://search.maven.org/search?q=g:%22com.github.michaelruocco%22%20AND%20a:%22file-loader%22)
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 
 This is a simple java library to enable loading of properties from files
 either on the filesystem or from the classpath in fewer lines of code.
@@ -21,7 +21,7 @@ gradle you would do this by adding the following to your build.gradle file:
 
 ```
 dependencies {
-    compile 'com.github.michaelruocco:file-loader:{latest-version}'
+    compile "com.github.michaelruocco:file-loader:{latest-version}"
 }
 ```
 
