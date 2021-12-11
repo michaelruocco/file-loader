@@ -19,7 +19,7 @@ either on the filesystem or from the classpath in fewer lines of code.
 To use the library you will need to add a dependency to your project. In
 gradle you would do this by adding the following to your build.gradle file:
 
-```
+```gradle
 dependencies {
     compile "com.github.michaelruocco:file-loader:{latest-version}"
 }
@@ -30,7 +30,7 @@ dependencies {
 Once you have the jar on your classpath you can load your properties from
 the file system by doing the following:
 
-```
+```java
 String path = "folder/file-system.properties";
 PropertyLoader propertyLoader = new FileSystemPropertyLoader();
 Properties properties = propertyLoader.load(path);
@@ -38,7 +38,7 @@ Properties properties = propertyLoader.load(path);
 
 Alternatively you can load a property file from the classpath by doing:
 
-```
+```java
 String path = "package/classpath.properties";
 PropertyLoader propertyLoader = new ClasspathPropertyLoader();
 Properties properties = propertyLoader.load(path);
@@ -55,7 +55,7 @@ described for properties above
 
 To load from the file system you would do:
 
-```
+```java
 String path = "folder/file-system.txt";
 FileContentLoader loader = new FileSystemFileContentLoader();
 String content = loader.loadContent(path);
@@ -63,7 +63,7 @@ String content = loader.loadContent(path);
 
 To load from the classpath you would do:
 
-```
+```java
 String path = "package/classpath.txt";
 FileContentLoader loader = new ClasspathFileContentLoader();
 String content = loader.loadContent(path);
@@ -80,7 +80,7 @@ described for properties above
 
 To load from the file system you would do:
 
-```
+```java
 String path = "folder/file-system.txt";
 FileLineLoader loader = new FileSystemFileLineLoader();
 Collection<String> lines = loader.loadLines(path);
@@ -88,7 +88,7 @@ Collection<String> lines = loader.loadLines(path);
 
 To load from the classpath you would do:
 
-```
+```java
 String path = "package/classpath.txt";
 FileLineLoader loader = new ClasspathFileLineLoader();
 Collection<String> lines = loader.loadLines(path);
@@ -104,7 +104,7 @@ test data from files in unit tests if required. The class has static methods
 which can be used to load data without creating an instance of a FileContentLoader
 class, e.g:
 
-```
+```java
 String myFileSystemContent = ContentLoader.loadContentFromFileSystem("folder/file.txt");
 String myClasspathContent = ContentLoader.loadContentFromClasspath("package/file.txt");
 ```
@@ -118,7 +118,7 @@ from either the classpath or the file system.
 
 To load from the file system you would do:
 
-```
+```java
 String path = "folder/file-system.txt";
 FileContentLoader loader = new FileSystemBase64FileContentLoader();
 Properties properties = loader.loadContent(path);
@@ -126,7 +126,7 @@ Properties properties = loader.loadContent(path);
 
 To load from the classpath you would do:
 
-```
+```java
 String path = "package/classpath.txt";
 FileContentLoader loader = new ClasspathBase64FileContentLoader();
 Properties properties = loader.loadContent(path);
@@ -143,7 +143,7 @@ the file system.
 
 To load an input stream from the file system you would do:
 
-```
+```java
 String path = "folder/file-system.txt";
 InputStreamLoader loader = new FileSystemInputStreamLoader();
 InputStream inputStream = loader.load(path);
@@ -152,7 +152,7 @@ InputStream inputStream = loader.load(path);
 
 To load an input stream from the classpath you would do:
 
-```
+```java
 String path = "package/file-system.txt";
 InputStreamLoader loader = new ClasspathInputStreamLoader();
 InputStream inputStream = loader.load(path);
@@ -172,7 +172,7 @@ the correct path has been used when loading.
 
 File Content Example:
 
-```
+```java
 FakeFileContentLoader loader = new FakeFileContentLoader();
 loader.setContent("my fake content"); // set the fake loader to return specified file content when load method is called
 
@@ -184,7 +184,7 @@ String pathPassedToLoadMethod = loader.getLastLoadedPath();
 
 Input Stream Example:
 
-```
+```java
 FakeInputStreamLoader loader = new FakeInputStreamLoader();
 InputStream mockedStream = new ByteArrayInputStream("mockedStream".getBytes());
 loader.setInputStream(mockedStream); // set the fake loader to return mocked input stream when load method is called
