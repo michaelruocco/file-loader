@@ -1,11 +1,10 @@
 package uk.co.mruoc.file.content;
 
+import lombok.AccessLevel;
+import lombok.NoArgsConstructor;
 
+@NoArgsConstructor(access = AccessLevel.PRIVATE)
 public class ContentLoader {
-
-    private ContentLoader() {
-        // utility class
-    }
 
     public static String loadContentFromFileSystem(String path) {
         final FileContentLoader loader = new FileSystemFileContentLoader();

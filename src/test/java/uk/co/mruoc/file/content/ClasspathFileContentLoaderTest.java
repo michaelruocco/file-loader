@@ -7,15 +7,15 @@ import java.io.UncheckedIOException;
 
 import static org.assertj.core.api.Assertions.assertThat;
 import static org.assertj.core.api.Assertions.catchThrowable;
+import static uk.co.mruoc.file.content.LinesConverter.joinWithNewline;
 
 class ClasspathFileContentLoaderTest {
 
-    private static final String NEW_LINE = System.lineSeparator();
     private final FileContentLoader loader = new ClasspathFileContentLoader();
 
     @Test
     void shouldReturnFileContentFromClasspathFile() {
-        String expectedContent = "firstName=MICHAEL" + NEW_LINE + "surname=RUOCCO";
+        String expectedContent = joinWithNewline("firstName=MICHAEL", "surname=RUOCCO");
         String path = "test/classpath.properties";
 
         String content = loader.loadContent(path);

@@ -11,7 +11,7 @@ public class BufferedReaderLoader {
     private final InputStreamLoader streamLoader;
 
     public BufferedReader load(String path) {
-        final InputStreamReader streamReader = new InputStreamReader(streamLoader.load(path));
+        InputStreamReader streamReader = new InputStreamReader(streamLoader.load(path));
         return new BufferedReader(streamReader);
     }
 

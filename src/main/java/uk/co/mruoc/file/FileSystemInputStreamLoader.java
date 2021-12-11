@@ -11,7 +11,7 @@ public class FileSystemInputStreamLoader implements InputStreamLoader {
     public InputStream load(String path) {
         try {
             log.debug("loading input stream from file system using path {}", path);
-            return new FileInputStream(new File(path));
+            return new FileInputStream(path);
         } catch (FileNotFoundException e) {
             throw new UncheckedIOException(path, e);
         }

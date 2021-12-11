@@ -49,6 +49,9 @@ dependencies {
     testRuntimeOnly "org.junit.jupiter:junit-jupiter-engine:${junitVersion}"
     testImplementation "org.junit.jupiter:junit-jupiter-api:${junitVersion}"
     testImplementation "org.assertj:assertj-core:3.21.0"
+
+    testFixturesCompileOnly "org.projectlombok:lombok:${lombokVersion}"
+    testFixturesAnnotationProcessor "org.projectlombok:lombok:${lombokVersion}"
 }
 
 javadoc.options.addStringOption('Xdoclint:none', '-quiet')

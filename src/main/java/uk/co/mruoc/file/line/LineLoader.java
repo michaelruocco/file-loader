@@ -1,12 +1,12 @@
 package uk.co.mruoc.file.line;
 
+import lombok.AccessLevel;
+import lombok.NoArgsConstructor;
+
 import java.util.Collection;
 
+@NoArgsConstructor(access = AccessLevel.PRIVATE)
 public class LineLoader {
-
-    private LineLoader() {
-        // utility class
-    }
 
     public static Collection<String> loadLinesFromFileSystem(String path) {
         final FileLineLoader loader = new FileSystemFileLineLoader();

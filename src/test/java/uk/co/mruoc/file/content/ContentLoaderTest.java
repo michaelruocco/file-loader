@@ -3,14 +3,13 @@ package uk.co.mruoc.file.content;
 import org.junit.jupiter.api.Test;
 
 import static org.assertj.core.api.Assertions.assertThat;
+import static uk.co.mruoc.file.content.LinesConverter.joinWithNewline;
 
 class ContentLoaderTest {
 
-    private static final String NEW_LINE = System.lineSeparator();
-
     @Test
     void shouldReturnFileContentFromFileSystemFile() {
-        String expectedContent = "firstName=michael" + NEW_LINE + "surname=ruocco";
+        String expectedContent = joinWithNewline("firstName=michael", "surname=ruocco");
         String path = "test/file-system.properties";
 
         String content = ContentLoader.loadContentFromFileSystem(path);
@@ -20,7 +19,7 @@ class ContentLoaderTest {
 
     @Test
     void shouldReturnFileContentFromClasspathFile() {
-        String expectedContent = "firstName=MICHAEL" + NEW_LINE + "surname=RUOCCO";
+        String expectedContent = joinWithNewline("firstName=MICHAEL", "surname=RUOCCO");
         String path = "test/classpath.properties";
 
         String content = ContentLoader.loadContentFromClasspath(path);
