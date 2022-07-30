@@ -20,5 +20,4 @@ public class FakeFileLineLoader implements FileLineLoader {
     public String getLastLoadedPath() {
         return path;
     }
-
 }

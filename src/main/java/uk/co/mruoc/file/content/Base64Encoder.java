@@ -8,5 +8,4 @@ public class Base64Encoder {
         byte[] bytes = Base64.getEncoder().encode(input.getBytes());
         return new String(bytes);
     }
-
 }

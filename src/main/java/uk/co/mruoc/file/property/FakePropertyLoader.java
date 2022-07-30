@@ -20,5 +20,4 @@ public class FakePropertyLoader implements PropertyLoader {
     public String getLastLoadedPath() {
         return path;
     }
-
 }

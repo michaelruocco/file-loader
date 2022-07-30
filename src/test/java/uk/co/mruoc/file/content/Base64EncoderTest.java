@@ -1,8 +1,8 @@
 package uk.co.mruoc.file.content;
 
-import org.junit.jupiter.api.Test;
-
 import static org.assertj.core.api.Assertions.assertThat;
+
+import org.junit.jupiter.api.Test;
 
 class Base64EncoderTest {
 
@@ -16,5 +16,4 @@ class Base64EncoderTest {
 
         assertThat(result).isEqualTo("dGhpcyBpcyBteSB0ZXN0IHN0cmluZw==");
     }
-
 }

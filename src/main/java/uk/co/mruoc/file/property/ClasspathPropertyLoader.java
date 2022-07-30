@@ -1,9 +1,8 @@
 package uk.co.mruoc.file.property;
 
+import java.util.Properties;
 import lombok.extern.slf4j.Slf4j;
 import uk.co.mruoc.file.ClasspathInputStreamLoader;
-
-import java.util.Properties;
 
 @Slf4j
 public class ClasspathPropertyLoader extends DefaultPropertyLoader {
@@ -14,8 +13,7 @@ public class ClasspathPropertyLoader extends DefaultPropertyLoader {
 
     @Override
     public Properties load(String path) {
-        log.info("loading file from classpath using path {}", path);
+        log.debug("loading file from classpath using path {}", path);
         return super.load(path);
     }
-
 }

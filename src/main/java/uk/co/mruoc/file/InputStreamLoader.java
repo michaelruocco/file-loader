@@ -5,5 +5,4 @@ import java.io.InputStream;
 public interface InputStreamLoader {
 
     InputStream load(String path);
-
 }

@@ -14,8 +14,7 @@ public class Base64FileContentLoader implements FileContentLoader {
     public String loadContent(String path) {
         String content = contentLoader.loadContent(path);
         String base64 = base64Encoder.encode(content);
-        log.info("converted content {}} into base64 {}", content, base64);
+        log.debug("converted content {} into base64 {}", content, base64);
         return base64;
     }
-
 }

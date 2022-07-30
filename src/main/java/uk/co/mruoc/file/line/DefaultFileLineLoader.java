@@ -1,14 +1,13 @@
 package uk.co.mruoc.file.line;
 
-import lombok.RequiredArgsConstructor;
-import uk.co.mruoc.file.BufferedReaderLoader;
-import uk.co.mruoc.file.FileLoadException;
-
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.UncheckedIOException;
 import java.util.Collection;
 import java.util.stream.Collectors;
+import lombok.RequiredArgsConstructor;
+import uk.co.mruoc.file.BufferedReaderLoader;
+import uk.co.mruoc.file.FileLoadException;
 
 @RequiredArgsConstructor
 public class DefaultFileLineLoader implements FileLineLoader {
@@ -23,5 +22,4 @@ public class DefaultFileLineLoader implements FileLineLoader {
             throw new FileLoadException(path, e);
         }
     }
-
 }

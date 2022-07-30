@@ -18,5 +18,4 @@ public class FakeFileContentLoader implements FileContentLoader {
     public String getLastLoadedPath() {
         return path;
     }
-
 }

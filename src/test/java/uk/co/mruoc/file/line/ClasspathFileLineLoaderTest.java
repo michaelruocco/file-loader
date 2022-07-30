@@ -1,13 +1,12 @@
 package uk.co.mruoc.file.line;
 
-import org.junit.jupiter.api.Test;
-import uk.co.mruoc.file.FileLoadException;
+import static org.assertj.core.api.Assertions.assertThat;
+import static org.assertj.core.api.Assertions.catchThrowable;
 
 import java.io.UncheckedIOException;
 import java.util.Collection;
-
-import static org.assertj.core.api.Assertions.assertThat;
-import static org.assertj.core.api.Assertions.catchThrowable;
+import org.junit.jupiter.api.Test;
+import uk.co.mruoc.file.FileLoadException;
 
 class ClasspathFileLineLoaderTest {
 
@@ -19,10 +18,7 @@ class ClasspathFileLineLoaderTest {
 
         Collection<String> lines = loader.loadLines(path);
 
-        assertThat(lines).containsExactly(
-                "firstName=MICHAEL",
-                "surname=RUOCCO"
-        );
+        assertThat(lines).containsExactly("firstName=MICHAEL", "surname=RUOCCO");
     }
 
     @Test
@@ -31,9 +27,9 @@ class ClasspathFileLineLoaderTest {
 
         Throwable error = catchThrowable(() -> loader.loadLines(path));
 
-        assertThat(error).isInstanceOf(FileLoadException.class)
+        assertThat(error)
+                .isInstanceOf(FileLoadException.class)
                 .hasMessageContaining(path)
                 .hasCauseInstanceOf(UncheckedIOException.class);
     }
-
 }

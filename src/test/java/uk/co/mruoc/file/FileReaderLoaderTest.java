@@ -1,9 +1,9 @@
 package uk.co.mruoc.file;
 
-import org.junit.jupiter.api.Test;
-import java.io.BufferedReader;
-
 import static org.assertj.core.api.Assertions.assertThat;
+
+import java.io.BufferedReader;
+import org.junit.jupiter.api.Test;
 
 class FileReaderLoaderTest {
 
@@ -13,10 +13,7 @@ class FileReaderLoaderTest {
 
         BufferedReader reader = FileReaderLoader.loadReaderFromFileSystem(path);
 
-        assertThat(reader.lines()).containsExactly(
-                "firstName=michael",
-                "surname=ruocco"
-        );
+        assertThat(reader.lines()).containsExactly("firstName=michael", "surname=ruocco");
     }
 
     @Test
@@ -25,10 +22,6 @@ class FileReaderLoaderTest {
 
         BufferedReader reader = FileReaderLoader.loadReaderFromClasspath(path);
 
-        assertThat(reader.lines()).containsExactly(
-                "firstName=MICHAEL",
-                "surname=RUOCCO"
-        );
+        assertThat(reader.lines()).containsExactly("firstName=MICHAEL", "surname=RUOCCO");
     }
-
 }

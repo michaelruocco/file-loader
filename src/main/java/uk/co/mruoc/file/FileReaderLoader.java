@@ -1,9 +1,8 @@
 package uk.co.mruoc.file;
 
+import java.io.BufferedReader;
 import lombok.AccessLevel;
 import lombok.NoArgsConstructor;
-
-import java.io.BufferedReader;
 
 @NoArgsConstructor(access = AccessLevel.PRIVATE)
 public class FileReaderLoader {
@@ -17,5 +16,4 @@ public class FileReaderLoader {
         BufferedReaderLoader loader = new ClasspathBufferedReaderLoader();
         return loader.load(path);
     }
-
 }

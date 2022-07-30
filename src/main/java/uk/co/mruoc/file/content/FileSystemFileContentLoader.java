@@ -12,8 +12,7 @@ public class FileSystemFileContentLoader extends DefaultFileContentLoader {
 
     @Override
     public String loadContent(String path) {
-        log.info("loading file content from file system path {}", path);
+        log.debug("loading file content from file system path {}", path);
         return super.loadContent(path);
     }
-
 }

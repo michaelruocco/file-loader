@@ -1,13 +1,12 @@
 package uk.co.mruoc.file.property;
 
-import lombok.RequiredArgsConstructor;
-import uk.co.mruoc.file.InputStreamConverter;
-import uk.co.mruoc.file.InputStreamLoader;
-
 import java.io.IOException;
 import java.io.InputStream;
 import java.io.UncheckedIOException;
 import java.util.Properties;
+import lombok.RequiredArgsConstructor;
+import uk.co.mruoc.file.InputStreamConverter;
+import uk.co.mruoc.file.InputStreamLoader;
 
 @RequiredArgsConstructor
 public class DefaultPropertyLoader implements PropertyLoader {
@@ -23,5 +22,4 @@ public class DefaultPropertyLoader implements PropertyLoader {
             throw new PropertiesNotFoundException(path, e);
         }
     }
-
 }

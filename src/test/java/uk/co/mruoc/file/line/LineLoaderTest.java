@@ -1,10 +1,9 @@
 package uk.co.mruoc.file.line;
 
-import org.junit.jupiter.api.Test;
+import static org.assertj.core.api.Assertions.assertThat;
 
 import java.util.Collection;
-
-import static org.assertj.core.api.Assertions.assertThat;
+import org.junit.jupiter.api.Test;
 
 class LineLoaderTest {
 
@@ -14,10 +13,7 @@ class LineLoaderTest {
 
         Collection<String> lines = LineLoader.loadLinesFromFileSystem(path);
 
-        assertThat(lines).containsExactly(
-                "firstName=michael",
-                "surname=ruocco"
-        );
+        assertThat(lines).containsExactly("firstName=michael", "surname=ruocco");
     }
 
     @Test
@@ -26,10 +22,6 @@ class LineLoaderTest {
 
         Collection<String> lines = LineLoader.loadLinesFromClasspath(path);
 
-        assertThat(lines).containsExactly(
-                "firstName=MICHAEL",
-                "surname=RUOCCO"
-        );
+        assertThat(lines).containsExactly("firstName=MICHAEL", "surname=RUOCCO");
     }
-
 }

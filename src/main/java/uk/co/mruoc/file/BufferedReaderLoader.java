@@ -1,9 +1,8 @@
 package uk.co.mruoc.file;
 
-import lombok.RequiredArgsConstructor;
-
 import java.io.BufferedReader;
 import java.io.InputStreamReader;
+import lombok.RequiredArgsConstructor;
 
 @RequiredArgsConstructor
 public class BufferedReaderLoader {
@@ -14,5 +13,4 @@ public class BufferedReaderLoader {
         InputStreamReader streamReader = new InputStreamReader(streamLoader.load(path));
         return new BufferedReader(streamReader);
     }
-
 }

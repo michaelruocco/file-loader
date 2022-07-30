@@ -20,5 +20,4 @@ public class FakeInputStreamLoader implements InputStreamLoader {
     public String getLastLoadedPath() {
         return path;
     }
-
 }

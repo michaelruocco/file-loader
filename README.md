@@ -205,5 +205,5 @@ String pathPassedToLoadMethod = loader.getLastLoadedPath();
 // runs tests
 // checks for gradle issues
 // checks dependency versions
-./gradlew clean currentVersion dependencyUpdates lintGradle spotlessApply build
+./gradlew clean currentVersion dependencyUpdates criticalLintGradle spotlessApply build
 ```

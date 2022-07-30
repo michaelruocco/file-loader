@@ -5,5 +5,4 @@ import java.util.Collection;
 public interface FileLineLoader {
 
     Collection<String> loadLines(String path);
-
 }

@@ -25,5 +25,4 @@ public class ContentLoader {
         final FileContentLoader loader = new ClasspathBase64FileContentLoader();
         return loader.loadContent(path);
     }
-
 }

@@ -1,10 +1,9 @@
 package uk.co.mruoc.file.property;
 
-import org.junit.jupiter.api.Test;
+import static org.assertj.core.api.Assertions.assertThat;
 
 import java.util.Properties;
-
-import static org.assertj.core.api.Assertions.assertThat;
+import org.junit.jupiter.api.Test;
 
 class FakePropertyLoaderTest {
 
@@ -38,5 +37,4 @@ class FakePropertyLoaderTest {
 
         assertThat(result).isEqualTo(properties);
     }
-
 }

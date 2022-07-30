@@ -1,11 +1,10 @@
 package uk.co.mruoc.file.line;
 
-import org.junit.jupiter.api.Test;
+import static org.assertj.core.api.Assertions.assertThat;
 
 import java.util.Arrays;
 import java.util.Collection;
-
-import static org.assertj.core.api.Assertions.assertThat;
+import org.junit.jupiter.api.Test;
 
 class FakeFileLineLoaderTest {
 
@@ -34,15 +33,11 @@ class FakeFileLineLoaderTest {
 
     @Test
     void shouldReturnLines() {
-        Collection<String> lines = Arrays.asList(
-                "my-line-1",
-                "my-line-2"
-        );
+        Collection<String> lines = Arrays.asList("my-line-1", "my-line-2");
         loader.setLines(lines);
 
         Collection<String> result = loader.loadLines("/my/path");
 
         assertThat(result).containsExactlyElementsOf(lines);
     }
-
 }

@@ -1,8 +1,8 @@
 package uk.co.mruoc.file.content;
 
-import org.junit.jupiter.api.Test;
-
 import static org.assertj.core.api.Assertions.assertThat;
+
+import org.junit.jupiter.api.Test;
 
 class Base64FileContentLoaderTest {
 
@@ -17,5 +17,4 @@ class Base64FileContentLoaderTest {
 
         assertThat(content).isEqualTo(expectedContent);
     }
-
 }

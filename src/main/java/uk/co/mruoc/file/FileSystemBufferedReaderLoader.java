@@ -5,5 +5,4 @@ public class FileSystemBufferedReaderLoader extends BufferedReaderLoader {
     public FileSystemBufferedReaderLoader() {
         super(new FileSystemInputStreamLoader());
     }
-
 }

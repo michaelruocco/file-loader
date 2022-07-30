@@ -1,10 +1,9 @@
 package uk.co.mruoc.file.content;
 
-import lombok.AccessLevel;
-import lombok.NoArgsConstructor;
-
 import java.util.Arrays;
 import java.util.Collection;
+import lombok.AccessLevel;
+import lombok.NoArgsConstructor;
 
 @NoArgsConstructor(access = AccessLevel.PRIVATE)
 public class LinesConverter {
@@ -18,5 +17,4 @@ public class LinesConverter {
     public static String joinWithNewline(Collection<String> lines) {
         return String.join(NEW_LINE, lines);
     }
-
 }

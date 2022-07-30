@@ -1,10 +1,9 @@
 package uk.co.mruoc.file;
 
-import lombok.extern.slf4j.Slf4j;
-
 import java.io.IOException;
 import java.io.InputStream;
 import java.io.UncheckedIOException;
+import lombok.extern.slf4j.Slf4j;
 
 @Slf4j
 public class ClasspathInputStreamLoader implements InputStreamLoader {
@@ -18,5 +17,4 @@ public class ClasspathInputStreamLoader implements InputStreamLoader {
         }
         return stream;
     }
-
 }

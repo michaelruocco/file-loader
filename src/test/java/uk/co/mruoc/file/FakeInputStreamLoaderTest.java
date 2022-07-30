@@ -1,11 +1,10 @@
 package uk.co.mruoc.file;
 
-import org.junit.jupiter.api.Test;
+import static org.assertj.core.api.Assertions.assertThat;
 
 import java.io.ByteArrayInputStream;
 import java.io.InputStream;
-
-import static org.assertj.core.api.Assertions.assertThat;
+import org.junit.jupiter.api.Test;
 
 class FakeInputStreamLoaderTest {
 
@@ -41,5 +40,4 @@ class FakeInputStreamLoaderTest {
 
         assertThat(stream).isEqualTo(expectedStream);
     }
-
 }

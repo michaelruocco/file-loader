@@ -1,9 +1,8 @@
 package uk.co.mruoc.file.line;
 
+import java.util.Collection;
 import lombok.AccessLevel;
 import lombok.NoArgsConstructor;
-
-import java.util.Collection;
 
 @NoArgsConstructor(access = AccessLevel.PRIVATE)
 public class LineLoader {
@@ -17,5 +16,4 @@ public class LineLoader {
         final FileLineLoader loader = new ClasspathFileLineLoader();
         return loader.loadLines(path);
     }
-
 }

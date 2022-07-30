@@ -1,12 +1,11 @@
 package uk.co.mruoc.file.property;
 
-import org.junit.jupiter.api.Test;
+import static org.assertj.core.api.Assertions.assertThat;
+import static org.assertj.core.api.Assertions.catchThrowable;
 
 import java.io.UncheckedIOException;
 import java.util.Properties;
-
-import static org.assertj.core.api.Assertions.assertThat;
-import static org.assertj.core.api.Assertions.catchThrowable;
+import org.junit.jupiter.api.Test;
 
 class ClasspathPropertyLoaderTest {
 
@@ -28,9 +27,9 @@ class ClasspathPropertyLoaderTest {
 
         Throwable error = catchThrowable(() -> loader.load(path));
 
-        assertThat(error).isInstanceOf(PropertiesNotFoundException.class)
+        assertThat(error)
+                .isInstanceOf(PropertiesNotFoundException.class)
                 .hasMessageContaining(path)
                 .hasCauseInstanceOf(UncheckedIOException.class);
     }
-
 }

@@ -1,9 +1,9 @@
 package uk.co.mruoc.file.content;
 
-import org.junit.jupiter.api.Test;
-
 import static org.assertj.core.api.Assertions.assertThat;
 import static uk.co.mruoc.file.content.LinesConverter.joinWithNewline;
+
+import org.junit.jupiter.api.Test;
 
 class ContentLoaderTest {
 
@@ -46,5 +46,4 @@ class ContentLoaderTest {
 
         assertThat(content).isEqualTo(expectedContent);
     }
-
 }
