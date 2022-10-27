@@ -2,6 +2,7 @@ package uk.co.mruoc.file.property;
 
 import static org.assertj.core.api.Assertions.assertThat;
 import static org.assertj.core.api.Assertions.catchThrowable;
+import static org.assertj.core.api.Assertions.entry;
 
 import java.io.UncheckedIOException;
 import java.util.Properties;
@@ -17,8 +18,7 @@ class ClasspathPropertyFileLoaderTest {
 
         Properties properties = loader.loadProperties(path);
 
-        assertThat(properties.get("firstName")).isEqualTo("MICHAEL");
-        assertThat(properties.get("surname")).isEqualTo("RUOCCO");
+        assertThat(properties).containsExactly(entry("firstName", "michael"), entry("surname", "ruocco"));
     }
 
     @Test

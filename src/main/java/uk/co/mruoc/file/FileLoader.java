@@ -1,5 +1,7 @@
 package uk.co.mruoc.file;
 
+import java.util.Collection;
+import java.util.Properties;
 import lombok.AccessLevel;
 import lombok.NoArgsConstructor;
 import uk.co.mruoc.file.content.ClasspathBase64FileContentLoader;
@@ -13,9 +15,6 @@ import uk.co.mruoc.file.line.FileSystemFileLineLoader;
 import uk.co.mruoc.file.property.ClasspathPropertyFileLoader;
 import uk.co.mruoc.file.property.FileSystemPropertyFileLoader;
 import uk.co.mruoc.file.property.PropertyFileLoader;
-
-import java.util.Collection;
-import java.util.Properties;
 
 @NoArgsConstructor(access = AccessLevel.PRIVATE)
 public class FileLoader {
