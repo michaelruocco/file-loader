@@ -2,13 +2,13 @@ package uk.co.mruoc.file.property;
 
 import java.util.Properties;
 
-public class FakePropertyLoader implements PropertyLoader {
+public class FakePropertyLoader implements PropertyFileLoader {
 
     private String path;
     private Properties properties;
 
     @Override
-    public Properties load(String path) {
+    public Properties loadProperties(String path) {
         this.path = path;
         return properties;
     }

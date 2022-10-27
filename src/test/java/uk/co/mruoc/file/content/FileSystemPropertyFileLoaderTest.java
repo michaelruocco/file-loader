@@ -2,33 +2,33 @@ package uk.co.mruoc.file.content;
 
 import static org.assertj.core.api.Assertions.assertThat;
 import static org.assertj.core.api.Assertions.catchThrowable;
+import static org.assertj.core.api.Assertions.entry;
 
 import java.io.UncheckedIOException;
 import java.util.Properties;
 import org.junit.jupiter.api.Test;
-import uk.co.mruoc.file.property.FileSystemPropertyLoader;
+import uk.co.mruoc.file.property.FileSystemPropertyFileLoader;
 import uk.co.mruoc.file.property.PropertiesNotFoundException;
-import uk.co.mruoc.file.property.PropertyLoader;
+import uk.co.mruoc.file.property.PropertyFileLoader;
 
-class FileSystemPropertyLoaderTest {
+class FileSystemPropertyFileLoaderTest {
 
-    private final PropertyLoader loader = new FileSystemPropertyLoader();
+    private final PropertyFileLoader loader = new FileSystemPropertyFileLoader();
 
     @Test
     void shouldReturnPropertiesFromFileSystemFile() {
         String path = "test/file-system.properties";
 
-        Properties properties = loader.load(path);
+        Properties properties = loader.loadProperties(path);
 
-        assertThat(properties.get("firstName")).isEqualTo("michael");
-        assertThat(properties.get("surname")).isEqualTo("ruocco");
+        assertThat(properties).containsExactly(entry("firstName", "michael"), entry("surname", "ruocco"));
     }
 
     @Test
     void shouldErrorIfFileDoesNotExist() {
         String path = "invalid/file-system.properties";
 
-        Throwable error = catchThrowable(() -> loader.load(path));
+        Throwable error = catchThrowable(() -> loader.loadProperties(path));
 
         assertThat(error)
                 .isInstanceOf(PropertiesNotFoundException.class)

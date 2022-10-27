@@ -5,7 +5,7 @@ import static org.assertj.core.api.Assertions.assertThat;
 import java.util.Properties;
 import org.junit.jupiter.api.Test;
 
-class FakePropertyLoaderTest {
+class FakePropertyFileLoaderTest {
 
     private final FakePropertyLoader loader = new FakePropertyLoader();
 
@@ -18,14 +18,14 @@ class FakePropertyLoaderTest {
     void shouldReturnLastLoadedPath() {
         String path = "/my/path";
 
-        loader.load(path);
+        loader.loadProperties(path);
 
         assertThat(loader.getLastLoadedPath()).isEqualTo(path);
     }
 
     @Test
     void shouldReturnNullPropertiesIfNotSet() {
-        assertThat(loader.load("")).isNull();
+        assertThat(loader.loadProperties("")).isNull();
     }
 
     @Test
@@ -33,7 +33,7 @@ class FakePropertyLoaderTest {
         Properties properties = new Properties();
         loader.setProperties(properties);
 
-        Properties result = loader.load("");
+        Properties result = loader.loadProperties("");
 
         assertThat(result).isEqualTo(properties);
     }

@@ -47,6 +47,20 @@ Properties properties = propertyLoader.load(path);
 If the properties are not loaded the code will throw a PropertiesNotFoundException
 but you are not forced to handle this if you do not want to.
 
+Additionally, if you are using this library from test code, and you are not concerned
+with mocking the loader there are also static helper method that can be used to load
+the properties in a single line, so the above would be shortened to:
+
+```java
+Properties properties = FileLoader.loadPropertiesFromFileSystem("folder/file-system.properties");
+```
+
+or:
+
+```java
+Properties properties = FileLoader.loadPropertiesFromClasspath("package/classpath.properties");
+```
+
 ### Loading File Content
 
 You can also use the library to load file content as well as properties, again this
@@ -72,7 +86,21 @@ String content = loader.loadContent(path);
 If the file content is not loaded the code will throw a FileContentLoadException
 but you are not forced to handle this if you do not want to.
 
-### Loading File Files
+Additionally, if you are using this library from test code, and you are not concerned
+with mocking the loader there are also static helper method that can be used to load
+the properties in a single line, so the above would be shortened to:
+
+```java
+String content = FileLoader.loadContentFromFileSystem("folder/file-system.txt");
+```
+
+or:
+
+```java
+String content = FileLoader.loadContentFromClasspath("package/classpath.txt");
+```
+
+### Loading File Lines
 
 You can also use the library to load file lines as well as properties, again this
 can be done either from the local file system or the classpath in the same way as
@@ -97,16 +125,18 @@ Collection<String> lines = loader.loadLines(path);
 If the file content is not loaded the code will throw a FileContentLoadException
 but you are not forced to handle this if you do not want to.
 
-### Loading File Content in Unit Tests
-
-A new static ContentLoader class has been added to allow easier loading
-test data from files in unit tests if required. The class has static methods
-which can be used to load data without creating an instance of a FileContentLoader
-class, e.g:
+Additionally, if you are using this library from test code, and you are not concerned
+with mocking the loader there are also static helper method that can be used to load
+the properties in a single line, so the above would be shortened to:
 
 ```java
-String myFileSystemContent = ContentLoader.loadContentFromFileSystem("folder/file.txt");
-String myClasspathContent = ContentLoader.loadContentFromClasspath("package/file.txt");
+Collection<String> lines = FileLoader.loadContentLinesFromFileSystem("folder/file-system.txt");
+```
+
+or:
+
+```java
+Collection<String> lines = FileLoader.loadContentLinesFromClasspath("package/classpath.txt");
 ```
 
 ### Loading File Content Base64 Encoded
@@ -134,6 +164,20 @@ Properties properties = loader.loadContent(path);
 
 If the file content is not loaded the code will throw a FileContentLoadException
 but you are not forced to handle this if you do not want to.
+
+Additionally, if you are using this library from test code, and you are not concerned
+with mocking the loader there are also static helper method that can be used to load
+the properties in a single line, so the above would be shortened to:
+
+```java
+String base64Content = FileLoader.loadBase64EncodedContentFromFileSystem("folder/file-system.txt");
+```
+
+or:
+
+```java
+String base64Content = FileLoader.loadBase64EncodedContentFromClasspath("package/classpath.txt");
+```
 
 ### Loading Input Streams
 
