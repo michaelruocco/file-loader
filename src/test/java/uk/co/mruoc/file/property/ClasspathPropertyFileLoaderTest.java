@@ -18,7 +18,7 @@ class ClasspathPropertyFileLoaderTest {
 
         Properties properties = loader.loadProperties(path);
 
-        assertThat(properties).containsExactly(entry("firstName", "michael"), entry("surname", "ruocco"));
+        assertThat(properties).containsExactly(entry("firstName", "MICHAEL"), entry("surname", "RUOCCO"));
     }
 
     @Test

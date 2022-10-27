@@ -152,7 +152,7 @@ signLibPublication.enabled = gradle.startParameter.taskNames.contains("publishTo
 
 spotless {
     java {
-        palantirJavaFormat("2.25.0")
+        palantirJavaFormat("2.27.0")
     }
 }
 

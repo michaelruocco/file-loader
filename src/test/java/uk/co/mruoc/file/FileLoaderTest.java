@@ -4,7 +4,7 @@ import static org.assertj.core.api.Assertions.assertThat;
 import static org.assertj.core.api.Assertions.entry;
 import static uk.co.mruoc.file.content.LinesConverter.joinWithNewline;
 
-import com.sun.tools.javac.util.List;
+import java.util.Arrays;
 import java.util.Collection;
 import java.util.Properties;
 import org.junit.jupiter.api.Test;
@@ -33,7 +33,7 @@ class FileLoaderTest {
 
     @Test
     void shouldReturnFileContentLinesFromFileSystemFile() {
-        Collection<String> expectedLines = List.of("firstName=michael", "surname=ruocco");
+        Collection<String> expectedLines = Arrays.asList("firstName=michael", "surname=ruocco");
         String path = "test/file-system.properties";
 
         Collection<String> lines = FileLoader.loadContentLinesFromFileSystem(path);
@@ -43,7 +43,7 @@ class FileLoaderTest {
 
     @Test
     void shouldReturnFileContentLinesFromClasspathFile() {
-        Collection<String> expectedLines = List.of("firstName=MICHAEL", "surname=RUOCCO");
+        Collection<String> expectedLines = Arrays.asList("firstName=MICHAEL", "surname=RUOCCO");
         String path = "test/classpath.properties";
 
         Collection<String> lines = FileLoader.loadContentLinesFromClasspath(path);
@@ -86,6 +86,6 @@ class FileLoaderTest {
 
         Properties properties = FileLoader.loadPropertiesFromClasspath(path);
 
-        assertThat(properties).containsExactly(entry("firstName", "michael"), entry("surname", "ruocco"));
+        assertThat(properties).containsExactly(entry("firstName", "MICHAEL"), entry("surname", "RUOCCO"));
     }
 }
