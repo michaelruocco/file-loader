@@ -18,14 +18,14 @@ class FakePropertyFileLoaderTest {
     void shouldReturnLastLoadedPath() {
         String path = "/my/path";
 
-        loader.load(path);
+        loader.loadProperties(path);
 
         assertThat(loader.getLastLoadedPath()).isEqualTo(path);
     }
 
     @Test
     void shouldReturnNullPropertiesIfNotSet() {
-        assertThat(loader.load("")).isNull();
+        assertThat(loader.loadProperties("")).isNull();
     }
 
     @Test
@@ -33,7 +33,7 @@ class FakePropertyFileLoaderTest {
         Properties properties = new Properties();
         loader.setProperties(properties);
 
-        Properties result = loader.load("");
+        Properties result = loader.loadProperties("");
 
         assertThat(result).isEqualTo(properties);
     }

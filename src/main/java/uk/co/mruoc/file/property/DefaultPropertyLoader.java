@@ -15,7 +15,7 @@ public class DefaultPropertyLoader implements PropertyFileLoader {
     private final InputStreamLoader inputStreamLoader;
 
     @Override
-    public Properties load(String path) {
+    public Properties loadProperties(String path) {
         try (InputStream stream = inputStreamLoader.load(path)) {
             return converter.toProperties(stream);
         } catch (IOException | UncheckedIOException e) {

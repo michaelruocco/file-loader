@@ -4,5 +4,5 @@ import java.util.Properties;
 
 public interface PropertyFileLoader {
 
-    Properties load(String path);
+    Properties loadProperties(String path);
 }

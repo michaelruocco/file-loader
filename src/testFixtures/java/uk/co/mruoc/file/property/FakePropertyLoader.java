@@ -8,7 +8,7 @@ public class FakePropertyLoader implements PropertyFileLoader {
     private Properties properties;
 
     @Override
-    public Properties load(String path) {
+    public Properties loadProperties(String path) {
         this.path = path;
         return properties;
     }

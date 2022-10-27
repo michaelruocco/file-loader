@@ -12,8 +12,8 @@ public class FileSystemPropertyFileLoader extends DefaultPropertyLoader {
     }
 
     @Override
-    public Properties load(String path) {
+    public Properties loadProperties(String path) {
         log.debug("loading file from file system path {}", path);
-        return super.load(path);
+        return super.loadProperties(path);
     }
 }

@@ -18,7 +18,7 @@ class FileSystemPropertyFileLoaderTest {
     void shouldReturnPropertiesFromFileSystemFile() {
         String path = "test/file-system.properties";
 
-        Properties properties = loader.load(path);
+        Properties properties = loader.loadProperties(path);
 
         assertThat(properties.get("firstName")).isEqualTo("michael");
         assertThat(properties.get("surname")).isEqualTo("ruocco");
@@ -28,7 +28,7 @@ class FileSystemPropertyFileLoaderTest {
     void shouldErrorIfFileDoesNotExist() {
         String path = "invalid/file-system.properties";
 
-        Throwable error = catchThrowable(() -> loader.load(path));
+        Throwable error = catchThrowable(() -> loader.loadProperties(path));
 
         assertThat(error)
                 .isInstanceOf(PropertiesNotFoundException.class)
