@@ -2,7 +2,6 @@ package uk.co.mruoc.file.content;
 
 import java.io.IOException;
 import java.io.InputStream;
-import java.io.UncheckedIOException;
 import lombok.RequiredArgsConstructor;
 import uk.co.mruoc.file.FileLoadException;
 import uk.co.mruoc.file.InputStreamConverter;
@@ -18,7 +17,7 @@ public class DefaultFileContentLoader implements FileContentLoader {
     public String loadContent(String path) {
         try (InputStream stream = toStream(path)) {
             return converter.toString(stream);
-        } catch (IOException | UncheckedIOException e) {
+        } catch (IOException e) {
             throw new FileLoadException(path, e);
         }
     }

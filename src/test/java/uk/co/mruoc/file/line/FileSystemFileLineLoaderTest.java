@@ -3,7 +3,7 @@ package uk.co.mruoc.file.line;
 import static org.assertj.core.api.Assertions.assertThat;
 import static org.assertj.core.api.Assertions.catchThrowable;
 
-import java.io.UncheckedIOException;
+import java.io.FileNotFoundException;
 import java.util.Collection;
 import org.junit.jupiter.api.Test;
 import uk.co.mruoc.file.FileLoadException;
@@ -30,6 +30,6 @@ class FileSystemFileLineLoaderTest {
         assertThat(error)
                 .isInstanceOf(FileLoadException.class)
                 .hasMessageContaining(path)
-                .hasCauseInstanceOf(UncheckedIOException.class);
+                .hasCauseInstanceOf(FileNotFoundException.class);
     }
 }

@@ -2,9 +2,9 @@ package uk.co.mruoc.file.property;
 
 import java.io.IOException;
 import java.io.InputStream;
-import java.io.UncheckedIOException;
 import java.util.Properties;
 import lombok.RequiredArgsConstructor;
+import uk.co.mruoc.file.FileLoadException;
 import uk.co.mruoc.file.InputStreamConverter;
 import uk.co.mruoc.file.InputStreamLoader;
 
@@ -18,8 +18,8 @@ public class DefaultPropertyLoader implements PropertyFileLoader {
     public Properties loadProperties(String path) {
         try (InputStream stream = inputStreamLoader.load(path)) {
             return converter.toProperties(stream);
-        } catch (IOException | UncheckedIOException e) {
-            throw new PropertiesNotFoundException(path, e);
+        } catch (IOException e) {
+            throw new FileLoadException(path, e);
         }
     }
 }

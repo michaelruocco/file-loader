@@ -4,7 +4,7 @@ import static org.assertj.core.api.Assertions.assertThat;
 import static org.assertj.core.api.Assertions.catchThrowable;
 import static uk.co.mruoc.file.content.LinesConverter.joinWithNewline;
 
-import java.io.UncheckedIOException;
+import java.io.FileNotFoundException;
 import org.junit.jupiter.api.Test;
 import uk.co.mruoc.file.FileLoadException;
 
@@ -31,6 +31,15 @@ class FileSystemFileContentLoaderTest {
         assertThat(error)
                 .isInstanceOf(FileLoadException.class)
                 .hasMessageContaining(path)
-                .hasCauseInstanceOf(UncheckedIOException.class);
+                .hasCauseInstanceOf(FileNotFoundException.class);
+    }
+
+    @Test
+    void shouldErrorIfPathIsEmpty() {
+        String path = "";
+
+        Throwable error = catchThrowable(() -> loader.loadContent(path));
+
+        assertThat(error).isInstanceOf(FileLoadException.class);
     }
 }

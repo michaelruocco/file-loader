@@ -203,7 +203,7 @@ InputStream inputStream = loader.load(path);
 // don't forget to close the stream when you're done with it!
 ```
 
-If the file content is not loaded the code will throw a UncheckedIOException
+If the file content is not loaded the code will throw a FileLoadException
 but you are not forced to handle this if you do not want to.
 
 ### Fakes

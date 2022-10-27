@@ -4,11 +4,10 @@ import static org.assertj.core.api.Assertions.assertThat;
 import static org.assertj.core.api.Assertions.catchThrowable;
 import static org.assertj.core.api.Assertions.entry;
 
-import java.io.UncheckedIOException;
 import java.util.Properties;
 import org.junit.jupiter.api.Test;
+import uk.co.mruoc.file.FileLoadException;
 import uk.co.mruoc.file.property.FileSystemPropertyFileLoader;
-import uk.co.mruoc.file.property.PropertiesNotFoundException;
 import uk.co.mruoc.file.property.PropertyFileLoader;
 
 class FileSystemPropertyFileLoaderTest {
@@ -30,9 +29,6 @@ class FileSystemPropertyFileLoaderTest {
 
         Throwable error = catchThrowable(() -> loader.loadProperties(path));
 
-        assertThat(error)
-                .isInstanceOf(PropertiesNotFoundException.class)
-                .hasMessageContaining(path)
-                .hasCauseInstanceOf(UncheckedIOException.class);
+        assertThat(error).isInstanceOf(FileLoadException.class).hasMessageContaining(path);
     }
 }
