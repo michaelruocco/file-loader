@@ -51,13 +51,13 @@ Additionally, if you are using this library from test code, and you are not conc
 with mocking the loader there are also static helper method that can be used to load
 the properties in a single line, so the above would be shortened to:
 
-```
+```java
 Properties properties = FileLoader.loadPropertiesFromFileSystem("folder/file-system.properties");
 ```
 
 or:
 
-```
+```java
 Properties properties = FileLoader.loadPropertiesFromClasspath("package/classpath.properties");
 ```
 
@@ -90,13 +90,13 @@ Additionally, if you are using this library from test code, and you are not conc
 with mocking the loader there are also static helper method that can be used to load
 the properties in a single line, so the above would be shortened to:
 
-```
+```java
 String content = FileLoader.loadContentFromFileSystem("folder/file-system.txt");
 ```
 
 or:
 
-```
+```java
 String content = FileLoader.loadContentFromClasspath("package/classpath.txt");
 ```
 
@@ -129,13 +129,13 @@ Additionally, if you are using this library from test code, and you are not conc
 with mocking the loader there are also static helper method that can be used to load
 the properties in a single line, so the above would be shortened to:
 
-```
+```java
 Collection<String> lines = FileLoader.loadContentLinesFromFileSystem("folder/file-system.txt");
 ```
 
 or:
 
-```
+```java
 Collection<String> lines = FileLoader.loadContentLinesFromClasspath("package/classpath.txt");
 ```
 
@@ -169,13 +169,13 @@ Additionally, if you are using this library from test code, and you are not conc
 with mocking the loader there are also static helper method that can be used to load
 the properties in a single line, so the above would be shortened to:
 
-```
+```java
 String base64Content = FileLoader.loadBase64EncodedContentFromFileSystem("folder/file-system.txt");
 ```
 
 or:
 
-```
+```java
 String base64Content = FileLoader.loadBase64EncodedContentFromClasspath("package/classpath.txt");
 ```
 
