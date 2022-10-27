@@ -2,7 +2,7 @@ package uk.co.mruoc.file.property;
 
 import java.util.Properties;
 
-public interface PropertyLoader {
+public interface PropertyFileLoader {
 
     Properties load(String path);
 }

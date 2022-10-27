@@ -9,7 +9,7 @@ import uk.co.mruoc.file.InputStreamConverter;
 import uk.co.mruoc.file.InputStreamLoader;
 
 @RequiredArgsConstructor
-public class DefaultPropertyLoader implements PropertyLoader {
+public class DefaultPropertyLoader implements PropertyFileLoader {
 
     private final InputStreamConverter converter = new InputStreamConverter();
     private final InputStreamLoader inputStreamLoader;

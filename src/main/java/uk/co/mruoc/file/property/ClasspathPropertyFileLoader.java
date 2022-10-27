@@ -5,9 +5,9 @@ import lombok.extern.slf4j.Slf4j;
 import uk.co.mruoc.file.ClasspathInputStreamLoader;
 
 @Slf4j
-public class ClasspathPropertyLoader extends DefaultPropertyLoader {
+public class ClasspathPropertyFileLoader extends DefaultPropertyLoader {
 
-    public ClasspathPropertyLoader() {
+    public ClasspathPropertyFileLoader() {
         super(new ClasspathInputStreamLoader());
     }
 

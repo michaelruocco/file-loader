@@ -5,7 +5,7 @@ import static org.assertj.core.api.Assertions.assertThat;
 import java.util.Properties;
 import org.junit.jupiter.api.Test;
 
-class FakePropertyLoaderTest {
+class FakePropertyFileLoaderTest {
 
     private final FakePropertyLoader loader = new FakePropertyLoader();
 

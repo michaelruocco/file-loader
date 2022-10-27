@@ -7,9 +7,9 @@ import java.io.UncheckedIOException;
 import java.util.Properties;
 import org.junit.jupiter.api.Test;
 
-class ClasspathPropertyLoaderTest {
+class ClasspathPropertyFileLoaderTest {
 
-    private final PropertyLoader loader = new ClasspathPropertyLoader();
+    private final PropertyFileLoader loader = new ClasspathPropertyFileLoader();
 
     @Test
     void shouldReturnPropertiesFromClasspathFile() {

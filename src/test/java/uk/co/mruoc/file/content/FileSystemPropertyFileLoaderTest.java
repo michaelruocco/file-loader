@@ -6,13 +6,13 @@ import static org.assertj.core.api.Assertions.catchThrowable;
 import java.io.UncheckedIOException;
 import java.util.Properties;
 import org.junit.jupiter.api.Test;
-import uk.co.mruoc.file.property.FileSystemPropertyLoader;
+import uk.co.mruoc.file.property.FileSystemPropertyFileLoader;
 import uk.co.mruoc.file.property.PropertiesNotFoundException;
-import uk.co.mruoc.file.property.PropertyLoader;
+import uk.co.mruoc.file.property.PropertyFileLoader;
 
-class FileSystemPropertyLoaderTest {
+class FileSystemPropertyFileLoaderTest {
 
-    private final PropertyLoader loader = new FileSystemPropertyLoader();
+    private final PropertyFileLoader loader = new FileSystemPropertyFileLoader();
 
     @Test
     void shouldReturnPropertiesFromFileSystemFile() {
