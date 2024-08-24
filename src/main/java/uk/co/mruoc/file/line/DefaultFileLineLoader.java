@@ -16,7 +16,7 @@ public class DefaultFileLineLoader implements FileLineLoader {
     @Override
     public Collection<String> loadLines(String path) {
         try (BufferedReader reader = bufferedReaderLoader.load(path)) {
-            return reader.lines().collect(Collectors.toList());
+            return reader.lines().toList();
         } catch (IOException e) {
             throw new FileLoadException(path, e);
         }
