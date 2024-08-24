@@ -3,7 +3,6 @@ package uk.co.mruoc.file.line;
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.util.Collection;
-import java.util.stream.Collectors;
 import lombok.RequiredArgsConstructor;
 import uk.co.mruoc.file.BufferedReaderLoader;
 import uk.co.mruoc.file.FileLoadException;
