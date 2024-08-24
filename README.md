@@ -3,7 +3,6 @@
 [![Build](https://github.com/michaelruocco/file-loader/workflows/pipeline/badge.svg)](https://github.com/michaelruocco/file-loader/actions)
 [![codecov](https://codecov.io/gh/michaelruocco/file-loader/branch/master/graph/badge.svg?token=FWDNP534O7)](https://codecov.io/gh/michaelruocco/file-loader)
 [![Codacy Badge](https://app.codacy.com/project/badge/Grade/272889cf707b4dcb90bf451392530794)](https://www.codacy.com/gh/michaelruocco/file-loader/dashboard?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=michaelruocco/file-loader&amp;utm_campaign=Badge_Grade)
-[![BCH compliance](https://bettercodehub.com/edge/badge/michaelruocco/file-loader?branch=master)](https://bettercodehub.com/)
 [![Quality Gate Status](https://sonarcloud.io/api/project_badges/measure?project=michaelruocco_file-loader&metric=alert_status)](https://sonarcloud.io/dashboard?id=michaelruocco_file-loader)
 [![Technical Debt](https://sonarcloud.io/api/project_badges/measure?project=michaelruocco_file-loader&metric=sqale_index)](https://sonarcloud.io/dashboard?id=michaelruocco_file-loader)
 [![Coverage](https://sonarcloud.io/api/project_badges/measure?project=michaelruocco_file-loader&metric=coverage)](https://sonarcloud.io/dashboard?id=michaelruocco_file-loader)
